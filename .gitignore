@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.local
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+.claude/settings.local.json
+.claude/agent-memory/
+vault/.obsidian/
+
+# generated: run /debrief NN and /debrief-team NN to rebuild
+outputs/*
+!outputs/.gitkeep

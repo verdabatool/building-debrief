@@ -1,0 +1,8 @@
+{
+  "name": "vault",
+  "description": "Keeps a linked markdown vault of what a course knows across every module, ingested from the finished deliverables.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Verda Batool"
+  }
+}

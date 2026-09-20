@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#D97757"/>
+    </marker>
+    <marker id="g2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8A887E"/>
+    </marker>
+  </defs>
+  <rect width="900" height="700" fill="#FAF9F5"/>
+
+  <text x="20" y="32" font-size="14" font-weight="600" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/debrief-team 02</text>
+  <text x="180" y="32" font-size="13" fill="#7C7A70">the two writers message each other before either writes a file</text>
+
+  <rect x="120" y="52" width="200" height="46" rx="9" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="220" y="73" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz-writer</text>
+  <text x="220" y="88" font-size="10.5" fill="#7C7A70" text-anchor="middle">teammate</text>
+
+  <rect x="580" y="52" width="200" height="46" rx="9" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="680" y="73" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcard-writer</text>
+  <text x="680" y="88" font-size="10.5" fill="#7C7A70" text-anchor="middle">teammate</text>
+
+  <line x1="220" y1="98" x2="220" y2="430" stroke="#D8D4C8" stroke-dasharray="4 4"/>
+  <line x1="680" y1="98" x2="680" y2="430" stroke="#D8D4C8" stroke-dasharray="4 4"/>
+
+  <text x="450" y="128" font-size="12" fill="#141413" text-anchor="middle">here are the questions I intend to ask,</text>
+  <text x="450" y="144" font-size="12" fill="#141413" text-anchor="middle">and the terms each one leans on you for</text>
+  <path d="M224 156 L676 156" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#m)"/>
+
+  <text x="450" y="188" font-size="12" fill="#141413" text-anchor="middle">here are the terms I intend to define</text>
+  <path d="M676 200 L224 200" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#m)"/>
+
+  <text x="450" y="232" font-size="12" fill="#141413" text-anchor="middle">one of your questions needs a term</text>
+  <text x="450" y="248" font-size="12" fill="#141413" text-anchor="middle">I have not carded, and I am full</text>
+  <path d="M676 260 L224 260" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#m)"/>
+
+  <text x="450" y="292" font-size="12" fill="#141413" text-anchor="middle">two of your cards define terms nothing</text>
+  <text x="450" y="308" font-size="12" fill="#141413" text-anchor="middle">uses. drop those and spend the slots</text>
+  <path d="M224 320 L676 320" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#m)"/>
+
+  <text x="450" y="352" font-size="12" fill="#141413" text-anchor="middle">agreed. swapped, and still within my count</text>
+  <path d="M676 364 L224 364" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#m)"/>
+
+  <rect x="120" y="386" width="660" height="34" rx="8" fill="#FBEFE9" stroke="#E7BCA6"/>
+  <text x="450" y="408" font-size="12" fill="#A9543A" text-anchor="middle" font-weight="600">both lists agreed &#183; every tested term has a card, every card is used</text>
+
+  <text x="450" y="452" font-size="11" fill="#7C7A70" text-anchor="middle">each writes once, nothing is rewritten</text>
+
+  <rect x="120" y="466" width="200" height="40" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="220" y="491" font-size="11.5" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz.md</text>
+
+  <rect x="580" y="466" width="200" height="40" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="680" y="491" font-size="11.5" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcards.md</text>
+
+  <path d="M220 420 L220 462" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+  <path d="M680 420 L680 462" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+
+  <rect x="340" y="540" width="220" height="54" rx="9" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="450" y="563" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">renderer</text>
+  <text x="450" y="580" font-size="10.5" fill="#7C7A70" text-anchor="middle">sub-agent, runs twice</text>
+
+  <path d="M220 506 L220 567 L336 567" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+  <path d="M680 506 L680 567 L564 567" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+
+  <rect x="120" y="626" width="200" height="40" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="220" y="651" font-size="11.5" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz.html</text>
+
+  <rect x="580" y="626" width="200" height="40" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="680" y="651" font-size="11.5" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcards.html</text>
+
+  <path d="M400 594 L400 610 L220 610 L220 622" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+  <path d="M500 594 L500 610 L680 610 L680 622" stroke="#8A887E" fill="none" marker-end="url(#g2)"/>
+
+  <text x="20" y="688" font-size="11" fill="#7C7A70">The renderer is an ordinary sub-agent, not a teammate. It has nothing to negotiate: it takes a finished file and converts it.</text>
+</svg>

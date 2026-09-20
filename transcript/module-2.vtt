@@ -1,0 +1,3810 @@
+WEBVTT
+
+1
+00:00:05.480 --> 00:00:07.280
+shobhit gupta: Doing an assignment.
+
+2
+00:00:07.770 --> 00:00:14.840
+shobhit gupta: for the production-ready, let's say, product, what I experienced is, let's say, it's not just
+
+3
+00:00:15.090 --> 00:00:31.530
+shobhit gupta: one, let's say, AI backend, so we have different components which we need to stitch together, which is, let's say, so, which is front-end, then we have, let's say, of course, the back end, like, there is a gateway.
+
+4
+00:00:31.630 --> 00:00:41.840
+shobhit gupta: there are, let's say, different components, which I think Hamza taught us, like, there is an API gateway, there are rate limiting, there is caching, and there are, let's say.
+
+5
+00:00:41.840 --> 00:00:56.850
+shobhit gupta: message queues, there is circuit breaker, and I can guarantee, like, in my current role in the org, we build a lot of prototypes, and we never think about all these things, like auto-scaling, load balancer. So, when we are doing these, let's say.
+
+6
+00:00:57.020 --> 00:01:04.870
+shobhit gupta: products for the client, so we want to build it up production-ready, and I think the main thing which differentiates from a demo is
+
+7
+00:01:05.150 --> 00:01:15.220
+shobhit gupta: harness around the LLM, which… which we built. So, like, Claude code. So, my takeaway from the… Oh.
+
+8
+00:01:15.470 --> 00:01:17.780
+shobhit gupta: Like, session was that
+
+9
+00:01:17.810 --> 00:01:35.610
+shobhit gupta: let's say Claude Code or ChatGPT, they are these harness around the LLM. So, if we can build something like a ChatGPT, Perplexity, Claude Code on our own, using these LLMs, that would, I think, differentiate us from, let's say, anybody else. So, yeah.
+
+10
+00:01:35.850 --> 00:01:39.419
+shobhit gupta: Hamza, that's what my understanding, yeah.
+
+11
+00:01:39.610 --> 00:01:51.990
+Hamza Farooq: So, first off, everyone, welcome to Module 2. We joined a little early, so we started answering questions. Chandra's question was that, you know, if everybody can build everything, if everybody, you know, it's so easy to build things, why don't we not
+
+12
+00:01:52.120 --> 00:01:55.350
+Hamza Farooq: what is the differentiation? The differentiation becomes…
+
+13
+00:01:55.780 --> 00:02:05.009
+Hamza Farooq: How well your system architecture design is around the ecosystem, so that you can build it scalable, you can build it right, you can build it for the people, and cons…
+
+14
+00:02:05.450 --> 00:02:20.520
+Hamza Farooq: Again, it's easy to build a demo when you have new people asking for features, when you have to maintain a codebase, when you have to think about how do you make sure that it's just going beyond 100 people at a time. That's what AI has not solved.
+
+15
+00:02:21.030 --> 00:02:24.720
+Hamza Farooq: Not yet, but it's not built to solve that in that direction.
+
+16
+00:02:26.520 --> 00:02:27.850
+Hamza Farooq: Alright, Aishwarya?
+
+17
+00:02:28.270 --> 00:02:29.289
+Hamza Farooq: Let's hard to believe in that.
+
+18
+00:02:29.870 --> 00:02:34.809
+Aishwarya Ashok: Yeah, no, I wanted to just add a little bit of a closure to Chandrey's question.
+
+19
+00:02:34.810 --> 00:02:54.740
+Aishwarya Ashok: the sense of, as we speak, there's also… people understand that you can build agents, but there's also a lot of requests that's going around for the next-gen sort of applications that are coming up, which are going to be custom harnesses. So as we speak, the last 10 days, there's been a lot of news and a lot of, conversations around
+
+20
+00:02:54.740 --> 00:02:59.750
+Aishwarya Ashok: How domain-specific hardnesses are going to become a theme of the next cycle of
+
+21
+00:02:59.750 --> 00:03:11.340
+Aishwarya Ashok: Building agents, because now everybody understands that it's easier to spin up an agent, but how do you go about to make it extremely specific to a domain, or a use case, or a certain knowledge that
+
+22
+00:03:11.340 --> 00:03:28.930
+Aishwarya Ashok: you would bring through. How does an agent differ from what's being used into compliance versus what's being used into a design agency versus a completely complicated another case is where most of the next phase of building applications or product people's knowledge is being put into.
+
+23
+00:03:28.930 --> 00:03:33.219
+Aishwarya Ashok: And the second part of this is, to what Shobhit and Hamza were saying, which is.
+
+24
+00:03:33.740 --> 00:03:49.659
+Aishwarya Ashok: I think a lot of us are looking into the building part, but how do you exactly know, like, how to grade the output of these agents? Actually, do you see them working fine once, or 10 times, or the hundredth time? How do you… how do you follow through that your… the agent that you've grid through?
+
+25
+00:03:49.660 --> 00:04:13.890
+Aishwarya Ashok: has actually been giving you the consistent output, because that is what we call as production-ready, right? That's what we call as going and being able to get it deployed into a customer's use case. So a large part of that is actually becoming the PM's role, or a part of the PM's role, because those aspects are not something that you say, I build, and then the agent would take care. It's going to be a lot of looking into traces, looking into observability, looking into evals.
+
+26
+00:04:13.920 --> 00:04:21.689
+Aishwarya Ashok: Which we're going to do in this course as well, but that's also largely the PM's transformation with respect to, like, building agents.
+
+27
+00:04:22.520 --> 00:04:33.839
+Chandreyee Chowdhury: Yeah, I think… thank you, Aishwarya, Hamza, Shobhit, for the clarification. Where my mind is getting at is, like, if I'm just vibe coding and building something, you can just go as far.
+
+28
+00:04:33.840 --> 00:04:46.740
+Chandreyee Chowdhury: But the output you generate in terms of what we call production ready, in terms of scale, in terms of you really making it big, thinking 5 years down the line, that's where I think we have not solved for it yet. So if we have this knowledge.
+
+29
+00:04:46.740 --> 00:04:53.880
+Chandreyee Chowdhury: This is where we can go at it building a serious product, and not just something which is, like, you spin up using an agent. Okay.
+
+30
+00:04:54.310 --> 00:04:59.650
+Hamza Farooq: So let me… and I'll just end with this one example. Chandrey, I guess, I believe you can cook, right, at home?
+
+31
+00:05:00.330 --> 00:05:05.920
+Hamza Farooq: But can you run a restaurant of 500 people coming in every single day?
+
+32
+00:05:08.530 --> 00:05:09.360
+Hamza Farooq: Possibly not.
+
+33
+00:05:09.360 --> 00:05:11.530
+Chandreyee Chowdhury: I mean, it needs plenty, yeah.
+
+34
+00:05:11.880 --> 00:05:14.360
+Hamza Farooq: And that's sort of the differentiation.
+
+35
+00:05:14.360 --> 00:05:15.679
+Chandreyee Chowdhury: Just kidding.
+
+36
+00:05:15.680 --> 00:05:32.350
+Hamza Farooq: the scale, because it requires a lot of things to produce. So, every time somebody says, you know, what's the difference? Everybody can buy posts. You can say, you can cook, right? Why don't you open a restaurant that serves thousands of people every day? Well, because I don't have the equipment, I don't have the harness, I don't have the infrastructure. That's exactly what it is at the end of the day.
+
+37
+00:05:32.800 --> 00:05:55.269
+Chandreyee Chowdhury: Right, and I think I will end this, because I see value in both, because I was building something one year back, and I got so much bogged down with the scale, I never really launched and put the product in front of people to test it. So I guess where the VIP coding part plays a very important role is to move faster, launch it, test it, and then you go and build it, like, when the idea is proven. Okay, understood. Thank you so much.
+
+38
+00:05:55.270 --> 00:06:09.479
+Hamza Farooq: Absolutely. Alright, awesome. Hey, everyone. Thank you for… thank you for the segment, Chandrey. So today is Module 2. We're going to pick up on a… on a topic which is, thinking like a PM, building like a software engineer.
+
+39
+00:06:10.160 --> 00:06:18.739
+Hamza Farooq: We've picked up this concept because we just don't want to give you examples of how to whiteboard all the way. We want you to be able to work
+
+40
+00:06:19.060 --> 00:06:29.389
+Hamza Farooq: with understanding on what you're building under the hood. We just don't want you to write a VIP code and say, you know, like a prompt or something, and say, hey, can you build me this? And then it gets built.
+
+41
+00:06:29.670 --> 00:06:49.419
+Hamza Farooq: That's the promise of AI. But there is a lot more that goes under the hood on how you can actually build it properly, and that's… those are some of the concepts that we want to cover. There will be… so, by the end of this course, you will have some deeper understanding of software engineering, so when you talk to your team, you have some depth associated with it. You're just not…
+
+42
+00:06:49.890 --> 00:07:06.139
+Hamza Farooq: saying, oh, I built something simple, but you should be able to talk about layers, and when you talk about the, you know, the layers of the infrastructure of what you've built, it becomes easier to feature-proof or make yourself more credible in the conversation.
+
+43
+00:07:06.560 --> 00:07:16.720
+Hamza Farooq: So, quick things, again, all recordings are automatically available after the class, so I think maybe sometimes it takes 24 hours to come through, but we have… we'll have all the recordings available to you.
+
+44
+00:07:16.720 --> 00:07:29.530
+Hamza Farooq: We, again, we have regular office hours, you know, with the, with the class recap, so… and we'll, Aishwary and I will sort of also drop a video, midway after the course, after 3 classes, to, you know, do a recap.
+
+45
+00:07:29.530 --> 00:07:33.850
+Hamza Farooq: on what we've done so far. We have a dedicated Slack channel for you all.
+
+46
+00:07:33.870 --> 00:07:38.969
+Hamza Farooq: if you… Cannot access it if you're not on it for this particular course, please let us know.
+
+47
+00:07:39.130 --> 00:07:57.030
+Hamza Farooq: And we have a bunch of course facilitators who will make sure, you know, like, answer your questions. Verda is here, Verda is one of our course facilitators, and then Amina is here as our course facilitator. So ask them any questions you need, and, you know, they'll sort of, you know, they'll try to answer you as soon as they can.
+
+48
+00:07:57.830 --> 00:08:13.629
+Hamza Farooq: In terms of the course, where we are, we are on Module 2. Module 2 is about, how do we think about building Cloud Code Skills Agent System Design. We want you to be… see, we don't… we know that you all use Cloud Code in some form.
+
+49
+00:08:13.730 --> 00:08:20.730
+Hamza Farooq: we want to put a system around it. We want to explain you and push you to think about how you can build something which actually
+
+50
+00:08:21.150 --> 00:08:24.449
+Hamza Farooq: improves your building, because Cloud Code is not a chatbot.
+
+51
+00:08:25.140 --> 00:08:41.980
+Hamza Farooq: That's the most important thing. Most of us use Cloud Code as a chatbot. We don't have systems in place that sort of build, build our things into a scalable architecture. That's what we're trying to go… that's what we're going to do in the, you know, throughout the session, or throughout the next classes also, is that
+
+52
+00:08:42.610 --> 00:08:56.500
+Hamza Farooq: Help you build better products, which are anti-slop, or which do not look, you know, sloppy, but they actually are built for scale, and they are following the protocols of how software engineers build their products.
+
+53
+00:08:57.680 --> 00:09:13.899
+Hamza Farooq: From Module 1, we talk about GenAI itself, we talk about harness, we talk about, you know, what is an LLM, what is, you know, how do you add different tools to it, how do you add memory to it, and then, you know, at the end of the day, what is the difference between an LLM, an agent, and a harness?
+
+54
+00:09:13.960 --> 00:09:18.419
+Hamza Farooq: In this class, we'll talk about how, as a product manager.
+
+55
+00:09:18.580 --> 00:09:20.739
+Hamza Farooq: You should think about being a soccer engineer.
+
+56
+00:09:21.070 --> 00:09:27.960
+Hamza Farooq: I'm going to keep pushing you all to think about software engineering skills, is that what you're building is what software engineers used to do.
+
+57
+00:09:29.190 --> 00:09:40.229
+Hamza Farooq: mostly PMs were focused on building as a… you know, they were build… you were focused on building specs. They were focused on building… what would my design be? What should I build at the end of the day?
+
+58
+00:09:41.200 --> 00:09:44.149
+Hamza Farooq: Here, what we're trying to do is we're trying to push you
+
+59
+00:09:44.610 --> 00:09:46.960
+Hamza Farooq: To think what you want to build.
+
+60
+00:09:47.340 --> 00:10:00.829
+Hamza Farooq: And actually end up building that in a way that you always envisioned it to do, and then remove the bottlenecks. So we've taken an example today, we'll talk about the assignments that were submitted, but
+
+61
+00:10:00.970 --> 00:10:11.760
+Hamza Farooq: How do we remove a bottleneck for you, so that you are actually building all the way that you want to build, and you're not limited by your technical capabilities, that you're not able to design something?
+
+62
+00:10:12.540 --> 00:10:26.680
+Hamza Farooq: Right. So, from assignment one, I think we know there were at least 6, submissions, unless they have grown. I know that, the last time I checked, I think there were six. Maybe you guys have submitted more, but
+
+63
+00:10:26.680 --> 00:10:39.989
+Hamza Farooq: We would ask you to do… we would really ask you to, you know, take on the time to submit your, you know, to share your submissions, to make sure that, you know, you're taking out the time to read through them, what we have given as an assignment, because they really help
+
+64
+00:10:40.080 --> 00:10:46.219
+Hamza Farooq: Push what you… what you will be building as you'll go through… go through these, sessions.
+
+65
+00:10:47.050 --> 00:10:55.319
+Hamza Farooq: So, our reflection is that, what does the agent actually decide? I mean, it should decide the next best action, or just generate an answer.
+
+66
+00:10:55.430 --> 00:10:56.969
+Hamza Farooq: That's very important, because
+
+67
+00:10:57.340 --> 00:11:02.520
+Hamza Farooq: If you want just an answer, you can just use an LLM in the middle, you don't need a harness around it.
+
+68
+00:11:03.060 --> 00:11:15.110
+Hamza Farooq: You need a harness when you need to generate something which is beyond text, essentially, or it requires a lot more thinking, a lot… a reasoning loop. So remember we said CTL, context?
+
+69
+00:11:15.620 --> 00:11:16.590
+Hamza Farooq: tools.
+
+70
+00:11:16.760 --> 00:11:17.740
+Hamza Farooq: and loop.
+
+71
+00:11:18.490 --> 00:11:20.619
+Hamza Farooq: So, if you need these 3 things.
+
+72
+00:11:20.960 --> 00:11:25.700
+Hamza Farooq: you need an agent. If you just need a prompt, That's just an LLM card.
+
+73
+00:11:26.280 --> 00:11:32.440
+Hamza Farooq: So, do we need to observe? Do we need to decide? Do we need to act, evaluate, repeat, or exit the loop part?
+
+74
+00:11:32.710 --> 00:11:36.929
+Hamza Farooq: if you'd… If you don't need that, that's just an LLM call for you.
+
+75
+00:11:37.810 --> 00:11:47.179
+Hamza Farooq: What should not be handled by the LLM? What is the context around things? How do you make sure that there are a lot of things that you have to build around the LLM?
+
+76
+00:11:47.290 --> 00:11:49.690
+Hamza Farooq: Which needs to bring things to life.
+
+77
+00:11:49.970 --> 00:11:51.990
+Hamza Farooq: How do you design them? How do you scope them?
+
+78
+00:11:52.630 --> 00:12:10.659
+Hamza Farooq: what is the context that you want to add? Like, what is the system prompts? What are the… how much are you appending to the bottom? Remember we showed you in, you know, the last gupt with Alex, is that where we were doing web search tools, and your context length was sort of just blowing up. That's something that we want to, that we want you to remember.
+
+79
+00:12:10.690 --> 00:12:17.139
+Hamza Farooq: At the end of the day, how much autonomy your agent should have, and what should it remember after the run?
+
+80
+00:12:17.640 --> 00:12:25.780
+Hamza Farooq: How much… how much do you want to keep it independent of you, and how much do you want it to run… remember all the different things it did? Are you serious? Go ahead.
+
+81
+00:12:26.040 --> 00:12:29.709
+Ashutosh Pandit: Yeah, so this loop concept, right, I understand that,
+
+82
+00:12:30.420 --> 00:12:36.629
+Ashutosh Pandit: But, for example, if we need some sort of human in the loop there, would it still qualify as an agent? So, for example, when we.
+
+83
+00:12:36.630 --> 00:12:37.000
+Hamza Farooq: Yes.
+
+84
+00:12:37.000 --> 00:12:37.710
+Ashutosh Pandit: Amina.
+
+85
+00:12:37.710 --> 00:12:38.150
+Hamza Farooq: Yes.
+
+86
+00:12:38.150 --> 00:12:41.170
+Ashutosh Pandit: It's still categorized as an agent with permanent… Yes. Okay.
+
+87
+00:12:41.170 --> 00:12:51.509
+Hamza Farooq: Yes. So, I'll give you a great example. There are a lot of companies that are launching, phone deliver… like, you can order on the phone. Like, you can order a takeout on the phone.
+
+88
+00:12:51.700 --> 00:13:00.529
+Hamza Farooq: They're adding an AI to that. So the AI will take your order, but if you say, oh, I want 250 milkshakes, it will take it to a human.
+
+89
+00:13:02.390 --> 00:13:16.920
+Hamza Farooq: So the loop can happen in a way that, you know, you're talking to an AI and say, hey, I would like you to make, you know, this is what I would like you to buy, or sorry, this is what I'd like to order from your restaurant, and it's taking the order, and it says, oh, it's a $600 bill.
+
+90
+00:13:16.920 --> 00:13:22.920
+Hamza Farooq: I think that's fine, but if somebody says, I want 250 or 300 milkshakes, it should invoke a human in the loop right away.
+
+91
+00:13:24.130 --> 00:13:28.250
+Hamza Farooq: Or, every single order should go through human, that is also possible.
+
+92
+00:13:29.090 --> 00:13:31.859
+Hamza Farooq: Yeah. So, human in the loop is a part of the loop.
+
+93
+00:13:34.430 --> 00:13:35.510
+Hamza Farooq: Okay? Okay.
+
+94
+00:13:35.510 --> 00:13:43.400
+Aishwarya Ashok: Basically, the loop just takes a goal in the picture. If that goal is reached, then the loop finishes. If not, it pauses, or it takes the next action.
+
+95
+00:13:43.880 --> 00:13:44.900
+Ashutosh Pandit: Okay, thank you.
+
+96
+00:13:45.530 --> 00:14:04.300
+Hamza Farooq: So, now… now that we have covered that, I wanted to highlight one of the assignments that, you know, that we felt really good about, and we felt like, you know, he did a… they did a great job. So, do we have Danilo in the call? I didn't see him join in.
+
+97
+00:14:04.300 --> 00:14:05.629
+Aishwarya Ashok: his snapshot.
+
+98
+00:14:05.630 --> 00:14:16.139
+Hamza Farooq: Yeah, so Danilo basically built, and you guys can check out his assignment also, it's, it's on the submission page, but what he did is that he built a tool which is called Sharpen.
+
+99
+00:14:17.600 --> 00:14:25.040
+Hamza Farooq: And I want to… the reason I want to show you this is not because he did a great job, but the reason I want to show you is what can happen out of it.
+
+100
+00:14:25.130 --> 00:14:35.999
+Hamza Farooq: So let's say this is something which you all do in one way. You basically… there's a message that you paste in ChatGPT, you give some context to ChartGPT, and ChatGPT says.
+
+101
+00:14:36.000 --> 00:14:50.800
+Hamza Farooq: hey, this is how you should write it. So, basically what he said is that I build a product which is paste a workplace message, get a critique, critique, a single signal rating, and I rewrite that, that, puts the point first, and makes the ask unmistakable.
+
+102
+00:14:50.960 --> 00:15:10.630
+Hamza Farooq: So let's say this is the draft that they've created. Hey team, wanted to reach out and give a bit of a background. Over the last few years, we've been looking at onboarding flow, and honestly, there's been a lot going on. Anyways, the members are… the numbers aren't great, and I think we might… may need to re… to consider possibly working it… reworking it, but I know everyone's busy.
+
+103
+00:15:10.630 --> 00:15:13.039
+Hamza Farooq: There is a bunch of sort of involved, and so on and so forth.
+
+104
+00:15:13.600 --> 00:15:18.120
+Hamza Farooq: And then you can identify who it should go to, and once it's been done.
+
+105
+00:15:18.990 --> 00:15:33.190
+Hamza Farooq: Once it's done, you can see that, you know, it puts together a response for you, just to take a minute. But it will just say that, you know, how you have written and what should be the response around it. So, the signal is weak.
+
+106
+00:15:33.940 --> 00:15:42.370
+Hamza Farooq: This is the critique, this is the conciseness, and then you… they eventually give you a writer, you know, a better way to write it.
+
+107
+00:15:43.490 --> 00:15:44.410
+Hamza Farooq: Now.
+
+108
+00:15:44.610 --> 00:15:49.190
+Hamza Farooq: I want to get some feedback from you guys. Do you think this is an LLM call, or this is an agent?
+
+109
+00:15:53.170 --> 00:15:54.660
+Hamza Farooq: And feel free to unmute.
+
+110
+00:15:55.080 --> 00:15:56.710
+Hamza Farooq: So we can discuss.
+
+111
+00:16:01.780 --> 00:16:16.629
+Rupa Bala: I think it's an agent call, because you're giving it some context, and it has to work within that context, and it has to remember the information you're trying to feed it about, okay, here's my general audience, and, you know, here's the goal I'm trying to reach, but my messaging is weak.
+
+112
+00:16:16.800 --> 00:16:19.680
+Rupa Bala: So it has to take all those into consideration.
+
+113
+00:16:20.360 --> 00:16:24.010
+Hamza Farooq: Yeah. So, I would describe… this is how I would describe it.
+
+114
+00:16:24.190 --> 00:16:31.180
+Hamza Farooq: This could be something what we call LLM with a tool, but here, we only have LLM with context.
+
+115
+00:16:31.510 --> 00:16:44.660
+Hamza Farooq: And there's no loop around it. So, in order to qualify for an agent, let's say, you need to have CTL, context, tool, and loop. There's no loop here, right? It's just going in one direction. There's no tool here.
+
+116
+00:16:44.900 --> 00:16:53.010
+Hamza Farooq: You're not making a web call. There's only context. So we would say this is a hybrid, but mostly closer to an LLM call, because you can
+
+117
+00:16:53.200 --> 00:16:56.069
+Hamza Farooq: Combine it all into one LLM call.
+
+118
+00:16:56.560 --> 00:17:10.849
+Hamza Farooq: So you… you're merging the context, but it's not really remembering. So once you're done, it doesn't remember anything that you've done. But if you were to add… if you were to think that, hey, I want an agent to look at… I want something to
+
+119
+00:17:11.230 --> 00:17:19.920
+Hamza Farooq: like, look at the customer and say, pull all the previous messages, or some of the last 10 messages that you've done, think through them. That would make it into an agent.
+
+120
+00:17:22.819 --> 00:17:38.029
+Hamza Farooq: Right? So, I mean, and that's the thing, right? It's not that, oh, this is when we have an agent, but you would have an agent when you have three components adding to it. The context layer, the tool layer, and the loop layer.
+
+121
+00:17:38.930 --> 00:17:56.270
+Hamza Farooq: you use an agent, or the power of an agent, when you have to think through multiple steps. So, if I were to say, this is great, but what if I could also look up the previous conversations that we have had with, you know, with this person talking to other team members, and then build something on top of that, that would be an agent for you.
+
+122
+00:17:57.170 --> 00:18:04.920
+Hamza Farooq: Right? So, there are a few things over here. There's, so, let's just say, if I were to build this product.
+
+123
+00:18:06.340 --> 00:18:08.159
+Hamza Farooq: Would you guys use this product?
+
+124
+00:18:09.220 --> 00:18:12.350
+Hamza Farooq: Would you pay $10 a month to use this product?
+
+125
+00:18:16.680 --> 00:18:22.030
+Hamza Farooq: And I… you… you can just use… so, no. Meredith, why? Why would you not pay for it?
+
+126
+00:18:23.860 --> 00:18:26.640
+Meredith Wade: I could probably make this myself.
+
+127
+00:18:26.820 --> 00:18:28.509
+Hamza Farooq: Yes, or use ChatGPT, right?
+
+128
+00:18:28.570 --> 00:18:35.929
+Meredith Wade: Yeah, I mean, the models have gotten so good that they'll probably be as good or better than what they've created. Yes, yes, yes.
+
+129
+00:18:35.930 --> 00:18:40.589
+Hamza Farooq: Also, one more thing is that you have to copy-paste it out of your system, right?
+
+130
+00:18:42.610 --> 00:18:49.049
+Meredith Wade: Right, and I'm already paying for access to an agent via… Claude, so…
+
+131
+00:18:50.200 --> 00:18:54.309
+Hamza Farooq: So, it's a great start, but what if I were to say.
+
+132
+00:18:54.650 --> 00:19:01.209
+Hamza Farooq: So, and… and, stay with me on this. So, let's just say I copy the same thing.
+
+133
+00:19:02.710 --> 00:19:04.140
+Hamza Farooq: and I go here.
+
+134
+00:19:05.490 --> 00:19:10.660
+Hamza Farooq: And I paste this message here, Right? This is my Gmail.
+
+135
+00:19:10.900 --> 00:19:16.739
+Hamza Farooq: And I click this link, And then it's right here.
+
+136
+00:19:17.680 --> 00:19:21.510
+Meredith Wade: No, because Gmail's already doing that too.
+
+137
+00:19:21.900 --> 00:19:26.599
+Hamza Farooq: Exactly. But what if you could own every single aspect of what's being built?
+
+138
+00:19:27.850 --> 00:19:29.749
+Meredith Wade: What if you could add your… I guess…
+
+139
+00:19:30.520 --> 00:19:35.299
+Meredith Wade: But at the same time, I'm still giving it to Google, right? I'm not owning it.
+
+140
+00:19:35.910 --> 00:19:37.590
+Hamza Farooq: No, that's the point.
+
+141
+00:19:38.260 --> 00:19:42.699
+Hamza Farooq: So what we did is, we built It has a Chrome extension.
+
+142
+00:19:43.380 --> 00:19:44.680
+Hamza Farooq: That you will own.
+
+143
+00:19:45.570 --> 00:19:52.470
+Hamza Farooq: So, what we did at the back end… so we took the… we took what, Danio showed.
+
+144
+00:19:52.680 --> 00:19:54.900
+Hamza Farooq: And we actually built a Chrome extension.
+
+145
+00:19:56.050 --> 00:20:01.909
+Meredith Wade: Could I… if I could honestly… okay, but I would say, if I could customize the prompt.
+
+146
+00:20:02.160 --> 00:20:04.010
+Meredith Wade: Then I might pay for it.
+
+147
+00:20:04.570 --> 00:20:04.970
+Hamza Farooq: Exactly.
+
+148
+00:20:04.970 --> 00:20:19.969
+Meredith Wade: feed it a few more things of my own, so that it's more personalized for me, but probably if it was in its standard form, kind of like, this feels like Grammarly to me, in a way, but if I could customize it and give it, like, a Markdown file, maybe.
+
+149
+00:20:20.790 --> 00:20:25.150
+Hamza Farooq: So… You pay for Grammarly, you might pay for…
+
+150
+00:20:25.240 --> 00:20:32.399
+Meredith Wade: I don't pay for Grammarly. It feels like Grammarly, right? Because Grammarly has its own Chrome extension, it's doing basically the same thing.
+
+151
+00:20:32.780 --> 00:20:39.090
+Hamza Farooq: So, we used to pay for Grammarly. We used to pay for Grammarly as a company because, you know, we needed these things.
+
+152
+00:20:39.090 --> 00:20:39.590
+Meredith Wade: Yep.
+
+153
+00:20:39.590 --> 00:20:45.260
+Hamza Farooq: But what if you go to your company and say, guys, we pay for Grammarly, we pay for, you know.
+
+154
+00:20:45.260 --> 00:20:49.149
+Meredith Wade: a bunch of things. But what if I could actually build my own…
+
+155
+00:20:49.520 --> 00:20:52.909
+Hamza Farooq: I can add whatever context I wanted over here.
+
+156
+00:20:53.580 --> 00:21:04.399
+Hamza Farooq: What if it stayed local? What if it added everything? You know, everything from our company, and it stayed in our ecosystem and doesn't go to Google? Would you use it?
+
+157
+00:21:05.890 --> 00:21:25.140
+Meredith Wade: I think that if other people… like, getting the adoption part of it, like, building it just for me, maybe, but for me, it would be more about, like, how do we start within, like, internal adoption of this, and teaching people also how to customize it. That's another, like, adoption point of friction, too.
+
+158
+00:21:25.140 --> 00:21:33.460
+Meredith Wade: Because not everybody types the same, and not everybody has familiarity with, like, how to customize this. So, to me, it would be about how could we figure out that.
+
+159
+00:21:33.460 --> 00:21:34.050
+Hamza Farooq: Yep.
+
+160
+00:21:34.050 --> 00:21:35.310
+Meredith Wade: Point as well.
+
+161
+00:21:35.700 --> 00:21:41.650
+Hamza Farooq: So you see… The great thing is, this product
+
+162
+00:21:41.800 --> 00:21:44.390
+Hamza Farooq: Like, this thing will be built in 20 minutes.
+
+163
+00:21:44.890 --> 00:21:51.660
+Hamza Farooq: When in 20 minutes, From an absolute no to a maybe.
+
+164
+00:21:51.920 --> 00:21:55.910
+Hamza Farooq: But if you spend 2 days on it, and you can build all the features in.
+
+165
+00:21:57.910 --> 00:22:01.149
+Hamza Farooq: And if you build all the features in.
+
+166
+00:22:01.270 --> 00:22:05.029
+Hamza Farooq: You would start thinking about what works for me.
+
+167
+00:22:05.810 --> 00:22:09.460
+Hamza Farooq: And that's literally what we are pushing you all to think about.
+
+168
+00:22:09.940 --> 00:22:12.880
+Hamza Farooq: Think of a product that your company is paying for.
+
+169
+00:22:13.450 --> 00:22:16.050
+Hamza Farooq: Think about what the adoption stands.
+
+170
+00:22:16.460 --> 00:22:25.780
+Hamza Farooq: Can we at least… so, the thing, the previous thing that was pulling us from not doing, using, or building it is because we didn't know how to build it.
+
+171
+00:22:26.740 --> 00:22:30.270
+Hamza Farooq: But since you are now able to build this.
+
+172
+00:22:30.770 --> 00:22:33.589
+Hamza Farooq: You can sell these ideas and say, okay.
+
+173
+00:22:33.990 --> 00:22:36.699
+Hamza Farooq: I think we can add our own context.
+
+174
+00:22:36.830 --> 00:22:43.399
+Hamza Farooq: Our data does not go to Google or Grammarly or anybody else. Our data stays within our own ecosystem.
+
+175
+00:22:43.550 --> 00:22:47.889
+Hamza Farooq: And we pay a fraction of a cost that we might have paid to use these products.
+
+176
+00:22:49.390 --> 00:22:58.360
+Hamza Farooq: And that's where you start seeing the company adoption towards AI, you know, like, small products, but becoming useful, more and more useful, to your use cases.
+
+177
+00:23:01.810 --> 00:23:03.359
+Hamza Farooq: Does that… does that make sense?
+
+178
+00:23:07.110 --> 00:23:15.409
+Aishwarya Ashok: One thing I'd like to add, I saw Jolene's message in chat as well, which is you can give the same context to ChartGBT to create your preferred copy.
+
+179
+00:23:15.420 --> 00:23:25.110
+Aishwarya Ashok: Absolutely, and that's the exact point also, right? From the beginning, you can always, if you already have a subscription, go copy-paste that for the first couple of messages.
+
+180
+00:23:25.110 --> 00:23:37.849
+Aishwarya Ashok: But let's say, when you think about it from the angle of building an agent, that takes in, to Meredith's point, it takes in your context, very specifically your voice, and something that has to keep adding value. So.
+
+181
+00:23:37.960 --> 00:23:48.899
+Aishwarya Ashok: 10 times, 15 times, 20 times, you ask it to keep collecting. There's some sort of memory that gets built in with every usage that you make, and then it becomes very customized, and it becomes
+
+182
+00:23:48.900 --> 00:24:08.649
+Aishwarya Ashok: super specific to how you would want to be building an agent, as opposed to doing, like, a one-off or two times and three times turn-offs with a very generic agent as chargeably. So, any sort of an idea can be turned into an agentic group, depending on how much context you're able to give, and also what do you…
+
+183
+00:24:08.710 --> 00:24:12.399
+Aishwarya Ashok: do beyond the, just the LLM call, and we'll do it.
+
+184
+00:24:17.190 --> 00:24:20.159
+Hamza Farooq: So, and… That's the great part.
+
+185
+00:24:20.800 --> 00:24:37.329
+Hamza Farooq: Previously, we were locked into ecosystems, so you could… yes, you can use this for Google, right? But can you change the prompts? So, Chandrey, you said Outlook Gmail possibly has features, right? But you cannot change any of the system prompts. You cannot add any of your information, you cannot…
+
+186
+00:24:37.380 --> 00:24:43.290
+Hamza Farooq: add any customizations. You are dependent completely on everything that they have to offer.
+
+187
+00:24:43.760 --> 00:24:46.319
+Hamza Farooq: So we basically changed the…
+
+188
+00:24:46.470 --> 00:24:53.390
+Hamza Farooq: we… you can now change the ecosystem and say, you know what? I could just build it, pay a fraction of the cost.
+
+189
+00:24:54.430 --> 00:24:59.080
+Hamza Farooq: And just not, like… It will seem like it's me who's writing it.
+
+190
+00:25:00.070 --> 00:25:03.739
+Hamza Farooq: That's sort of the differentiation that exists. Chandrey Guide?
+
+191
+00:25:04.120 --> 00:25:20.349
+Chandreyee Chowdhury: I have a question. Let's say, for the Polish agent, right, if I'm building something where, I'm using Outlook or Gmail, let's say, will it… will I not be able to pull the contacts from all my sent items, in terms of the pattern, like, how I write, etc?
+
+192
+00:25:22.710 --> 00:25:25.280
+Hamza Farooq: You can, but you have to copy-paste the whole thing.
+
+193
+00:25:25.580 --> 00:25:31.579
+Hamza Farooq: You could potentially design a system which literally says, pull from page, and it will pull it itself.
+
+194
+00:25:32.060 --> 00:25:32.400
+Chandreyee Chowdhury: Okay.
+
+195
+00:25:32.400 --> 00:25:43.260
+Hamza Farooq: So, instead of copy-pasting 25 different previous conversations and getting things wrong, this can exactly pull the whole thing for you, and you can own the system prompt that is written also behind the scenes.
+
+196
+00:25:43.910 --> 00:25:45.430
+Chandreyee Chowdhury: Okay.
+
+197
+00:25:45.980 --> 00:25:53.680
+Hamza Farooq: Right? Those are the things that sort of make it… starts making it better and better for you. And I'm just showing you one example out of one
+
+198
+00:25:53.840 --> 00:26:00.439
+Hamza Farooq: Literally one exercise that we have done, how you can start moving and start building, thinking of your own products.
+
+199
+00:26:02.240 --> 00:26:15.239
+Hamza Farooq: Right? Which will have a better signature of you than any of the tools that are out there, because you have no control over any of the way that they are built, or any of the information that is being used from your company.
+
+200
+00:26:17.250 --> 00:26:21.000
+Hamza Farooq: Right? Here, you own every single part of the ecosystem.
+
+201
+00:26:25.370 --> 00:26:33.819
+Hamza Farooq: So, Meredith… great. So, Meredith, you… I would love for you to think about how you can start thinking about adopting a product, like, not this product, but…
+
+202
+00:26:33.980 --> 00:26:40.909
+Hamza Farooq: When you have internal information, you have access to so many different things. How do you build and design something which will bring it to life?
+
+203
+00:26:41.910 --> 00:26:46.210
+Hamza Farooq: That's what we are all pushing you for, to think with an open mind.
+
+204
+00:26:46.370 --> 00:26:52.619
+Hamza Farooq: on what's the possibility that… how do we go from… you know, this is called the mom test. There's actually a book called The Mom Test.
+
+205
+00:26:52.860 --> 00:27:07.689
+Hamza Farooq: If you guys, want to really read about, you know, how to sell products, you know, what product sells, it's, this is a great read. In that book, it says, would your mom actually buy a product from you, or just be nice to you, like, oh, my kid built such a great product?
+
+206
+00:27:07.940 --> 00:27:15.090
+Hamza Farooq: So start thinking about these things as you design your projects, as you start building them. It will give you a good insight.
+
+207
+00:27:15.830 --> 00:27:32.050
+Hamza Farooq: And that's why we occur in this class. We're not in this class just to tell you, hey, this is how you write your prompt, this is how you build your skill guide. We will also teach you that. But we want you to think out of the box. I have so much internal knowledge on systems, how do I integrate that knowledge all together over there?
+
+208
+00:27:32.780 --> 00:27:36.410
+Hamza Farooq: Alright, any last thoughts on this before we move ahead?
+
+209
+00:27:37.290 --> 00:27:45.320
+Rupa Bala: I have a question. I guess I'm still kind of a little bit lost on where the loop is in this particular example.
+
+210
+00:27:45.320 --> 00:27:47.030
+Hamza Farooq: There's no loop, there's no loop?
+
+211
+00:27:47.400 --> 00:27:48.509
+Hamza Farooq: There is no loop.
+
+212
+00:27:49.420 --> 00:27:56.359
+Hamza Farooq: The loop would have existed if it were pulling information from my 20 different conversations.
+
+213
+00:27:56.360 --> 00:27:56.990
+Rupa Bala: Right.
+
+214
+00:27:56.990 --> 00:28:03.809
+Hamza Farooq: it was thinking through and saying, oh, I'm gonna update and keep going in a circle until I find the right answer. There is no loop over here.
+
+215
+00:28:03.810 --> 00:28:17.680
+Rupa Bala: Would the loop be… would the loop be more about finding the actual, like, depending on how it is written, of course, it could be finding the latest information, or it could be just, like, more… you know, modifying the tone based on how the progression has been over the last few conversations.
+
+216
+00:28:17.680 --> 00:28:18.350
+Hamza Farooq: Yes.
+
+217
+00:28:18.350 --> 00:28:18.820
+Rupa Bala: And that…
+
+218
+00:28:18.820 --> 00:28:20.120
+Hamza Farooq: This is just copy-paste.
+
+219
+00:28:20.500 --> 00:28:21.150
+Rupa Bala: Okay.
+
+220
+00:28:21.420 --> 00:28:24.670
+Rupa Bala: And I guess we'll learn about how to
+
+221
+00:28:25.040 --> 00:28:32.760
+Rupa Bala: you know, ask… ask the agent to, you know, be that nuanced in its, output. Okay.
+
+222
+00:28:32.760 --> 00:28:47.259
+Hamza Farooq: Yes. So, remember, CTL, these are the three things that you'll be working with. Context, how much do we add? Tools, we use different tools to call that information. Loop, keep going in a loop until we evaluate and find out what's right for us.
+
+223
+00:28:49.050 --> 00:28:57.369
+Hamza Farooq: Right? That's the idea behind the scenes, of how we use Agentic ecosystems. This is literally nothing but an LLM call for us.
+
+224
+00:28:58.950 --> 00:29:03.389
+Hamza Farooq: But think about how we can improve this, and start thinking about
+
+225
+00:29:03.620 --> 00:29:05.439
+Hamza Farooq: How we would use more of that.
+
+226
+00:29:08.060 --> 00:29:10.200
+Hamza Farooq: Right? Okay, so…
+
+227
+00:29:10.330 --> 00:29:28.650
+Hamza Farooq: We just showed you a tool, and you know, we showed you, you know, what it means. Again, we have, you know, we have a harness, we have the LLM in the middle, we have tools, you have Agent Clue, context management harness, which makes an agent bring to life. This, in this particular use case, was an LLM connected to a context layer.
+
+228
+00:29:29.940 --> 00:29:44.780
+Hamza Farooq: But essentially, the agent that you built is part of a sort of a bigger system. And our… the definition of our… us doing our work is to sort of build an ecosystem which is
+
+229
+00:29:45.010 --> 00:30:02.400
+Hamza Farooq: just not an LLM call, but it's using multiple tools, it has observability, it has guardrails, it has an architecture, and we'll be sprinkling all of these conversations. So, we'll focus on architecture in today's class, we'll talk about some of the architecture parts. The reason we're pushing you to think about them
+
+230
+00:30:02.700 --> 00:30:10.890
+Hamza Farooq: is not because we want to just give you a new flavor. We're pushing you to think about architecture, because when you think about architecture.
+
+231
+00:30:11.280 --> 00:30:17.189
+Hamza Farooq: You can actually build systems that are already in your mind, but you just didn't have the name of the tools for it.
+
+232
+00:30:17.700 --> 00:30:21.679
+Hamza Farooq: We're just improving your vocabulary on what you're building.
+
+233
+00:30:22.110 --> 00:30:27.389
+Hamza Farooq: You already know that they should exist, but you just don't know that they… they need… this is what it is.
+
+234
+00:30:28.330 --> 00:30:36.889
+Hamza Farooq: Right? That's the idea behind the scenes that we want to do. And this takes us to what we have when you build a full, full-stack product.
+
+235
+00:30:37.160 --> 00:30:41.740
+Hamza Farooq: A full-stack product is something that looks like this. It has a front-end.
+
+236
+00:30:42.280 --> 00:30:49.549
+Hamza Farooq: So the UI, UX, the user interface is what we call the front end.
+
+237
+00:30:49.930 --> 00:30:52.850
+Hamza Farooq: Where you can enter information.
+
+238
+00:30:52.980 --> 00:30:58.560
+Hamza Farooq: you can upload images, you can upload text, you can write a bunch of things. That is what you are
+
+239
+00:30:58.680 --> 00:31:08.060
+Hamza Farooq: front end, your, you know, entry input, system states, progress. So all of the things that are happening over here, this is what you call the front end.
+
+240
+00:31:09.110 --> 00:31:23.719
+Hamza Farooq: It can be in, you know, the tools like React or Angular. Those are some of the… those are the names that we give to these technologies, but front-end is literally the visual space that you have
+
+241
+00:31:23.920 --> 00:31:29.099
+Hamza Farooq: And the… and the progress bars and the ability to upload information over there.
+
+242
+00:31:29.600 --> 00:31:38.300
+Hamza Farooq: It does not have a brain, it does not have processing capability, It relies on the backend.
+
+243
+00:31:39.130 --> 00:31:40.229
+Hamza Farooq: To build everything.
+
+244
+00:31:40.720 --> 00:31:45.910
+Hamza Farooq: So the front end is what you see, the buttons, the form, the uploading options.
+
+245
+00:31:46.380 --> 00:31:49.559
+Hamza Farooq: But what you actually build out of it, what…
+
+246
+00:31:49.740 --> 00:31:54.839
+Hamza Farooq: Actually, starts to give it logic, is what we call the backend.
+
+247
+00:31:55.630 --> 00:31:56.510
+Hamza Farooq: some…
+
+248
+00:31:56.780 --> 00:32:05.470
+Hamza Farooq: Full-stack engineers are, you know, there are… there are multiple jobs in this space. There's front-end developer, there's a back-end developer, and there's a full-stack engineer.
+
+249
+00:32:05.790 --> 00:32:08.980
+Hamza Farooq: The full-stack engineers do a great job.
+
+250
+00:32:09.180 --> 00:32:13.950
+Hamza Farooq: You know, as, you know, they outsource a lot of work to front-end to AI,
+
+251
+00:32:14.260 --> 00:32:19.420
+Hamza Farooq: But the biggest work they do is to… it's via building the backend.
+
+252
+00:32:20.200 --> 00:32:24.609
+Hamza Farooq: And the backend over here… does anybody want to take a guess on whether it's the backend over here?
+
+253
+00:32:28.070 --> 00:32:29.579
+Hamza Farooq: Javida, I'm looking at you.
+
+254
+00:32:30.090 --> 00:32:35.800
+Hamza Farooq: So the ba… Aishobit.
+
+255
+00:32:37.020 --> 00:32:37.710
+shobhit gupta: Oh.
+
+256
+00:32:38.850 --> 00:32:43.810
+shobhit gupta: So… Back-end as in, like, we're, so…
+
+257
+00:32:44.730 --> 00:32:53.260
+shobhit gupta: I mean, is it the Mern stack that you thought, like, I'm not sure.
+
+258
+00:32:53.260 --> 00:32:58.469
+Hamza Farooq: So the backend is basically where all the API protocols and processing is happening for you.
+
+259
+00:32:59.090 --> 00:33:05.110
+Hamza Farooq: So, when you think about building something, think of your front end as just a skin.
+
+260
+00:33:05.660 --> 00:33:19.840
+Hamza Farooq: the backend is where all the logic, all the API protocols are being made. You're going back and forth, you are connecting to different ecosystems. So, the control, so, the context.
+
+261
+00:33:20.430 --> 00:33:22.909
+Hamza Farooq: tools and loop happens in the AI backend.
+
+262
+00:33:23.230 --> 00:33:27.469
+Hamza Farooq: But the backend is where the core logic of the software exists.
+
+263
+00:33:27.840 --> 00:33:30.010
+Hamza Farooq: So, if you were to land on a page.
+
+264
+00:33:30.190 --> 00:33:32.660
+Hamza Farooq: The front end would have dummy information.
+
+265
+00:33:33.090 --> 00:33:42.749
+Hamza Farooq: The backend is what's aggregating all the information and sending it to the front end so you can visually see it. So a front-end, without a backend.
+
+266
+00:33:43.610 --> 00:33:47.099
+Hamza Farooq: doesn't have any power in it. So, this is the skin.
+
+267
+00:33:47.300 --> 00:33:52.670
+Hamza Farooq: This is the Every single organ and the bone structure which is associated with it.
+
+268
+00:33:53.610 --> 00:34:03.109
+Hamza Farooq: And then you have the AI backend, which is your brain, really, which basically does all the processing for the AI-related ecosystem for you.
+
+269
+00:34:03.580 --> 00:34:06.200
+Hamza Farooq: So… We'll just recap quickly.
+
+270
+00:34:06.810 --> 00:34:12.100
+Hamza Farooq: The front-end layer is your buttons and your forms and the visual aspects of things.
+
+271
+00:34:12.929 --> 00:34:25.879
+Hamza Farooq: The backend is where the business logic lives, where you're… it's… you build something which… we call a technology Node.js or JavaScripting, where you have a backend that has all the infrastructure you need
+
+272
+00:34:25.980 --> 00:34:33.420
+Hamza Farooq: for flow of information. It's the… it's the structure that you… that makes the building.
+
+273
+00:34:34.090 --> 00:34:41.019
+Hamza Farooq: And the AI backend is the LLM calls which you will make back and forth as you… as you go through.
+
+274
+00:34:41.130 --> 00:34:43.719
+Hamza Farooq: So I'm gonna pause there. Jonlin, you had your hand up.
+
+275
+00:34:45.080 --> 00:34:53.769
+Jonlin: Yeah, so, like, I get the front-end, back-end portion, not unfamiliar territory to me, but,
+
+276
+00:34:53.949 --> 00:34:59.339
+Jonlin: I just want to connect it to something else and just clarify my understanding. The… when they talk about, like.
+
+277
+00:34:59.610 --> 00:35:02.109
+Jonlin: you know, Salesforce offering all its…
+
+278
+00:35:02.820 --> 00:35:08.400
+Jonlin: you know, tools or its entire ecosystem headless. Does that mean that
+
+279
+00:35:08.620 --> 00:35:16.759
+Jonlin: like, what does headless mean in this context? Does that mean that there's no front end, and it's really just for agents to access the back end?
+
+280
+00:35:17.410 --> 00:35:18.840
+Jonlin: Systems?
+
+281
+00:35:19.030 --> 00:35:21.490
+Jonlin: Or am I… am I confusing things?
+
+282
+00:35:21.960 --> 00:35:27.919
+Hamza Farooq: So, Headless is another ecosystem which basically does not have a front-end, it's just API protocols.
+
+283
+00:35:28.330 --> 00:35:38.230
+Hamza Farooq: In a way, you can think of it as just having a backend. Like, there's other things associated with it, there are other things associated with it, but basically.
+
+284
+00:35:38.370 --> 00:35:45.000
+Hamza Farooq: Headless is an existence that does not need an… that's a front-end… that does not need a URL to exist.
+
+285
+00:35:45.750 --> 00:35:49.120
+Hamza Farooq: It's a… it's an API protocol that you're making.
+
+286
+00:35:49.420 --> 00:35:53.659
+Hamza Farooq: And it's running everything in the background, there's no website that opens up for you to look at.
+
+287
+00:35:54.290 --> 00:36:08.009
+Jonlin: Yeah, so… yeah, okay, okay. Yeah, that was my kind of understanding, but, like, is it kind of similar to this and said, like, minus the front end, then? Like, all the other stuff exists, as were, right?
+
+288
+00:36:08.010 --> 00:36:12.220
+Hamza Farooq: And it can expand itself much bigger, much, much larger as we go.
+
+289
+00:36:12.620 --> 00:36:13.920
+Hamza Farooq: It's been expanded.
+
+290
+00:36:14.420 --> 00:36:15.920
+Hamza Farooq: Right? So…
+
+291
+00:36:15.920 --> 00:36:17.169
+Jonlin: plan. Thank you.
+
+292
+00:36:17.670 --> 00:36:24.570
+Hamza Farooq: Right. So, basically, in… If you have this tool sharpened, right?
+
+293
+00:36:26.000 --> 00:36:27.769
+Hamza Farooq: If you have this tool in Sharpen.
+
+294
+00:36:28.350 --> 00:36:34.449
+Hamza Farooq: and you are running this in the front end, you have this as a frontend. There's a backend over here.
+
+295
+00:36:35.080 --> 00:36:39.179
+Hamza Farooq: Which is making direct calls, to the AI backend.
+
+296
+00:36:39.390 --> 00:36:42.750
+Hamza Farooq: The front end itself cannot make calls to AI backend.
+
+297
+00:36:43.210 --> 00:36:48.890
+Hamza Farooq: the front end exists, and there are many specifications. As a software engineer, you'll see a lot of examples.
+
+298
+00:36:49.120 --> 00:37:02.229
+Hamza Farooq: But essentially, when you talk to your full-stack team, you talk about what does the front-end visuals look like, what are the buttons, what are the forms, how would it all look? Then you have the back end, which basically is the connect… it's the structure.
+
+299
+00:37:02.340 --> 00:37:10.340
+Hamza Farooq: Which connects everything. So, as a human body, your skin is your content, your bones is… and the brain that you have.
+
+300
+00:37:10.900 --> 00:37:15.789
+Hamza Farooq: the brain that exists is your LLN, which you are making plots to it.
+
+301
+00:37:17.130 --> 00:37:23.880
+Hamza Farooq: And that sort of… It brings it all together for you on what you're building over here, which is…
+
+302
+00:37:24.050 --> 00:37:33.919
+Hamza Farooq: a full-stack application. So, when you work with Lovable, this is what you see at the end of the day, and all the different layers happen behind the scenes, you just don't know
+
+303
+00:37:34.070 --> 00:37:39.579
+Hamza Farooq: Because you're not getting into the code, you're not getting into the background, you're just visually attached to it.
+
+304
+00:37:40.510 --> 00:37:43.409
+Hamza Farooq: And that's sort of what we… what you see over here.
+
+305
+00:37:44.570 --> 00:37:45.450
+Hamza Farooq: So…
+
+306
+00:37:46.330 --> 00:37:55.939
+Hamza Farooq: Front-end, back-end, AI backend, and then the last is the infrastructure, which is the… which is the data, which is the databases, which is the caching, which is deployment.
+
+307
+00:37:56.280 --> 00:38:01.720
+Hamza Farooq: So, we cover all of these things as we go through.
+
+308
+00:38:01.940 --> 00:38:05.179
+Hamza Farooq: Most often, your harness exists over here.
+
+309
+00:38:05.820 --> 00:38:09.379
+Hamza Farooq: you're creating a harness… all your harnessed ecosystem over here.
+
+310
+00:38:09.770 --> 00:38:15.539
+Hamza Farooq: And the other things that you have on top and back are the ones which are connected to bring it to life. Aishwarya?
+
+311
+00:38:16.230 --> 00:38:22.409
+Aishwarya Ashok: Yeah, so one point that I wanted to add for the front-end backend and AI backend part is.
+
+312
+00:38:22.410 --> 00:38:40.249
+Aishwarya Ashok: As we see that, let's say OpenAI and ChatGPT has, browser use functionality, or we see a lot of Agentic browsers, or Agentic tools, that these days get easier access to certain websites that you want to log in, or certain, buttons that you would want to click.
+
+313
+00:38:40.250 --> 00:38:57.710
+Aishwarya Ashok: So, most of these, agents, similar to how humans know how to click a certain button, we know how to navigate the UX. A lot of the front end and the back-end in the coming times are being… putting in the agents in the same place as a human.
+
+314
+00:38:57.710 --> 00:39:18.459
+Aishwarya Ashok: So the AI backend is still very much the core power, the functionality behind any of the AI Agentic application that's being built. But for front-end and backend, a lot of the human clicks and human mimicked UX patterns are also being followed by Agentic browsers. For some of you who might use Comet, some of you who might have used,
+
+315
+00:39:18.460 --> 00:39:27.180
+Aishwarya Ashok: ChatGPT's browser use, where you say, hey, can you go log into this site for me? Can you go click these buttons? Can you auto-draft responses for me in Gmail?
+
+316
+00:39:27.180 --> 00:39:33.489
+Aishwarya Ashok: All of these are very similar to how humans handle front-end and back-end. The same API calls, the same…
+
+317
+00:39:33.560 --> 00:39:53.450
+Aishwarya Ashok: sort of, navigation between one step to another is being mimicked and carried out by agents themselves. So that's why the front end and the backend are being transformed in the Agentic times. The AI backend is still the same layer that, as people who would be building this entire Agentic application, we'd be putting in.
+
+318
+00:39:53.450 --> 00:39:57.750
+Aishwarya Ashok: as well as, LLM applications would be taken in based on the API calls.
+
+319
+00:39:57.880 --> 00:39:58.890
+Aishwarya Ashok: Oh, yes, I'm sorry.
+
+320
+00:40:01.850 --> 00:40:11.159
+Hamza Farooq: Awesome. Any further questions on what we are discussing this part, and what does it mean? And I'll just tell you one important thing.
+
+321
+00:40:13.110 --> 00:40:19.299
+Hamza Farooq: You usually… Never… Prompt your AI about these things.
+
+322
+00:40:19.660 --> 00:40:33.269
+Hamza Farooq: you never tell your LLM when you build a front-end. Like, I'm sure all… how many of you have actually built a website using Claude or Codex or something else? How many have used Lovable, right? So, you can use the hand emoji to show us, but I'm sure that there are a bunch of you have used it, right?
+
+323
+00:40:33.920 --> 00:40:37.749
+Hamza Farooq: Every single time when you build it, it looks like this.
+
+324
+00:40:39.770 --> 00:40:47.320
+Hamza Farooq: All of the layers are created for you, you just don't know that they exist. Or you have not seen… like, you're not explained by the code.
+
+325
+00:40:47.540 --> 00:40:51.169
+Hamza Farooq: So where… why is it important for you to know them? Because…
+
+326
+00:40:51.350 --> 00:41:08.270
+Hamza Farooq: As you build them better, as you build them more, secure, as you build them with less vulnerability, to prevent, you know, user data being leaked, to prevent, to make sure that, you know, you can have better ecosystem, you have scaled to more users.
+
+327
+00:41:08.290 --> 00:41:12.150
+Hamza Farooq: Knowledge of these four things becomes very, very important.
+
+328
+00:41:12.490 --> 00:41:22.579
+Hamza Farooq: And as a new PM, as you know, like, you are… you're Chandrey, you are Jonlin, you are coming in and having a conversation with your full-stack team, you have to say, hey, how are we thinking about scaling?
+
+329
+00:41:23.510 --> 00:41:28.849
+Hamza Farooq: How are we thinking about, you know, when the user information comes, where are we storing that information?
+
+330
+00:41:29.220 --> 00:41:36.330
+Hamza Farooq: So you can have that conversation with them, is that where you are storing it, and how you're storing it, and how it's being used.
+
+331
+00:41:37.310 --> 00:41:40.639
+Hamza Farooq: That is what will make you a great PM.
+
+332
+00:41:41.710 --> 00:41:45.709
+Hamza Farooq: If you're just focusing on prompting, it's not going to take you anywhere, because
+
+333
+00:41:45.950 --> 00:41:49.390
+Hamza Farooq: That is the lowest hanging fruit of the entire conversation.
+
+334
+00:41:50.580 --> 00:41:52.069
+Hamza Farooq: Alright? So…
+
+335
+00:41:52.120 --> 00:42:08.770
+Hamza Farooq: And if none of this makes sense, just remember this, this is your money site for today. This is all you need to remember. There is a front-end, there is a back-end, there's an AI backend, and there's an infrastructure and data layer, which is built out for you when you're designing something. So, if you build an e-commerce website.
+
+336
+00:42:08.770 --> 00:42:14.189
+Hamza Farooq: So, Chandrey, when you built your ML, you know, PM to ML,
+
+337
+00:42:14.310 --> 00:42:20.590
+Hamza Farooq: You… when people sign up, they're using your infrastructure layer so that you can store their information.
+
+338
+00:42:21.180 --> 00:42:31.450
+Hamza Farooq: They use the front end to click through. They use the backend to navigate from one page to another, to display all the content. That's what your backend is doing.
+
+339
+00:42:31.550 --> 00:42:36.149
+Hamza Farooq: And your AI backend is generating new context for you as you're going.
+
+340
+00:42:36.600 --> 00:42:39.260
+Hamza Farooq: So they all go hand in hand.
+
+341
+00:42:39.620 --> 00:42:48.630
+Hamza Farooq: we don't know enough about them, or most often, PMs don't know enough about them, because they're just behind the scenes, and you're like, if I don't… if I can't see it, then it doesn't exist for me.
+
+342
+00:42:49.230 --> 00:42:54.079
+Hamza Farooq: But a lot of times, the errors in… backend, an AI backend?
+
+343
+00:42:54.650 --> 00:42:58.410
+Hamza Farooq: It's what causes a lot more problem in your systems and vulnerabilities.
+
+344
+00:43:00.440 --> 00:43:06.560
+Hamza Farooq: Right? So, front-end, back-end, and then we have the AI back-end infrastructure.
+
+345
+00:43:07.980 --> 00:43:15.959
+Hamza Farooq: The reason we want to… we want you to know this, again, is basically when you design these things, right, when you… when you build them.
+
+346
+00:43:16.820 --> 00:43:25.230
+Hamza Farooq: Most often, you just drop the pawn and says, I would like you to build an AI… I would like you to build a voice AI agent, or I would like you to build a product that does this.
+
+347
+00:43:25.920 --> 00:43:32.620
+Hamza Farooq: As you move better, as you move and you build them better, you want to introduce better specs?
+
+348
+00:43:33.840 --> 00:43:39.399
+Hamza Farooq: And you want to introduce more concepts on how the loop will happen.
+
+349
+00:43:39.900 --> 00:43:41.979
+Hamza Farooq: What kind of contacts will be loaded?
+
+350
+00:43:42.480 --> 00:43:45.529
+Hamza Farooq: And how often which tools will be caught.
+
+351
+00:43:45.910 --> 00:43:51.359
+Hamza Farooq: As you design them better, as you design them, and you improve those concepts.
+
+352
+00:43:51.470 --> 00:44:06.499
+Hamza Farooq: your tools will become more user-friendly. Your tools will actually have features which users want, rather than saying, oh, I don't even know how to build it in the first place. That's the idea that we are trying to push through.
+
+353
+00:44:06.620 --> 00:44:07.749
+Hamza Farooq: shobit go ahead.
+
+354
+00:44:08.960 --> 00:44:22.259
+shobhit gupta: Yeah, so, so when you said backend, so I got confused, actually, between, let's say, is it Node.js, or let's say, is it Express? So, I mean, let's say, because I'm coming from a data science background, so I don't have
+
+355
+00:44:22.260 --> 00:44:30.289
+shobhit gupta: Yeah. This knowledge, so when a new project comes to me, which I can't, let's say, past API I've been using to build my demos, and now.
+
+356
+00:44:30.290 --> 00:44:30.660
+Hamza Farooq: Yep.
+
+357
+00:44:30.660 --> 00:44:37.450
+shobhit gupta: this Node.js, and also, do we also need to know, like, which is good in what scenario to…
+
+358
+00:44:37.610 --> 00:44:38.950
+shobhit gupta: Let's say,
+
+359
+00:44:39.540 --> 00:44:48.540
+Hamza Farooq: No, you don't need to know how to write code, but this is, again, your second money site, which is, this is how your stack gets built up. You're sitting over here as a data scientist.
+
+360
+00:44:48.690 --> 00:44:52.489
+Hamza Farooq: You will build a faster API which will interact with your backend.
+
+361
+00:44:53.090 --> 00:44:55.709
+Hamza Farooq: Yes. That backend interacts with your front-end.
+
+362
+00:44:56.790 --> 00:45:09.210
+Hamza Farooq: Right? You probably used… you probably used to use, Streamlit or something like, you know, Gradio back in the day, right? That fast API used to connect directly to frontend via a backend, a very thin backend layer.
+
+363
+00:45:10.610 --> 00:45:22.779
+Hamza Farooq: So, the concepts have changed, but this is your… again, take a screenshot of this, like, and I'm sure you have… you guys have access to this deck, but think about it. You… you sit in one of these three places.
+
+364
+00:45:24.110 --> 00:45:28.679
+Hamza Farooq: most often you sit over here, or you sit at the top layer, which is the… that you are the PM,
+
+365
+00:45:28.840 --> 00:45:36.770
+Hamza Farooq: You have to say, you have to ask your AI, which kind of front-end are you building? Are you building React? Are you building Tailwind? And how are you deploying it?
+
+366
+00:45:39.310 --> 00:45:44.160
+Hamza Farooq: So, when you start designing these things, or start controlling all of them.
+
+367
+00:45:44.400 --> 00:45:50.280
+Hamza Farooq: You get a better handling capability, of… Back and forth conversation.
+
+368
+00:45:52.360 --> 00:45:52.980
+shobhit gupta: Okay.
+
+369
+00:45:54.440 --> 00:45:59.720
+Hamza Farooq: Right? It's as if you have control over every aspect of what you're building. Aishwarya, go ahead.
+
+370
+00:46:00.590 --> 00:46:04.439
+Aishwarya Ashok: Yeah, no, in fact, I wanted to say that, with…
+
+371
+00:46:04.480 --> 00:46:13.529
+Aishwarya Ashok: about 6 to 7 ideas that we had as submissions in the assignment. With this lens of front and back-end and AI backend.
+
+372
+00:46:13.530 --> 00:46:29.410
+Aishwarya Ashok: you can go back to reflect on how specifics can those feature specs be, especially with respect to… you say that there's an LLM that works in the background, or an LLM plus tool that works in the background, but what are those edge cases, what are those
+
+373
+00:46:29.410 --> 00:46:35.479
+Aishwarya Ashok: Things that you've not mentioned in the prompt, and that is still not being covered when it has to be built out as an agent.
+
+374
+00:46:35.480 --> 00:46:56.499
+Aishwarya Ashok: A simple example of a front-end would be upload a document, and all of us think that's so easy, it's just a file that we just have to upload. But what happens if the file is of a higher size? What happens if it, if the LLM stops midway reading through the file, the tool is not working, so it's not giving you an error response, and the application just stops midway?
+
+375
+00:46:56.500 --> 00:47:02.160
+Aishwarya Ashok: So, those are the specifics with which you now have the information to go
+
+376
+00:47:02.330 --> 00:47:05.850
+Aishwarya Ashok: Make those details into the agent that you're building, which is
+
+377
+00:47:05.850 --> 00:47:30.640
+Aishwarya Ashok: not just, say, upload a document for me, but go on to be very specific about what happens if a document size is higher, what happens if a certain model fails, and then you have a backup, and what… how do you know that the error has come through? So, this is the lens we want you to take away. It's not just to know this is what a front-end is and what a backend is, but how does it tie back into the idea that you want to be building, so that you have more information
+
+378
+00:47:30.640 --> 00:47:36.060
+Aishwarya Ashok: and the right details to be telling your AI agent to be building out what you want.
+
+379
+00:47:38.870 --> 00:47:47.639
+Hamza Farooq: That is what we call AI feature spec, which is, you know, most often you say, I want to build a product in which I can upload a document.
+
+380
+00:47:47.760 --> 00:47:50.190
+Hamza Farooq: And it will generate a summary for me.
+
+381
+00:47:51.210 --> 00:47:56.180
+Hamza Farooq: How does it actually translate into is, what you want is on the left.
+
+382
+00:47:56.700 --> 00:48:00.120
+Hamza Farooq: What is on the right is what gets built out.
+
+383
+00:48:01.190 --> 00:48:03.750
+Hamza Farooq: And as much control you have on it.
+
+384
+00:48:04.060 --> 00:48:08.519
+Hamza Farooq: the better you will build it, the better edge cases you will handle.
+
+385
+00:48:08.920 --> 00:48:11.520
+Hamza Farooq: And that is what will convert into a good product.
+
+386
+00:48:12.660 --> 00:48:17.710
+Hamza Farooq: Because a lot of times, we're just thinking about the most basic thing to get started on, which is, hey.
+
+387
+00:48:17.840 --> 00:48:20.229
+Hamza Farooq: I have an idea, let's just build something.
+
+388
+00:48:20.510 --> 00:48:25.489
+Hamza Farooq: what we are pushing you to say, when you think of an idea, make a PRD, make a spec list.
+
+389
+00:48:25.920 --> 00:48:37.459
+Hamza Farooq: on what does it mean to work, and then push it to you or your AI, so that when it builds, it builds a robust tool for you that is… that does not look AI sloppy, but has
+
+390
+00:48:37.640 --> 00:48:45.149
+Hamza Farooq: better ingestion and better ways of thinking, because we showed you this product, and most of you said… almost everyone said, no, I won't buy it.
+
+391
+00:48:45.320 --> 00:48:50.369
+Hamza Farooq: But then a no became a maybe when we said you can add all your information to this ecosystem.
+
+392
+00:48:52.280 --> 00:48:57.370
+Hamza Farooq: This is… so, most of you probably didn't know that you could make it into a Chrome extension.
+
+393
+00:48:57.610 --> 00:49:00.529
+Hamza Farooq: Some of you might have the idea, but think about…
+
+394
+00:49:00.950 --> 00:49:17.240
+Hamza Farooq: you work on Google, you work on Outlook. What if you had a Chrome extension which is doing the lifting for you by ingesting, from your ecosystem beyond what is available on what Gmail has, or what any other product has included over here?
+
+395
+00:49:18.540 --> 00:49:24.859
+Hamza Farooq: Right? Those are the things which sort of makes it, you know, awesome to work with how you're building them.
+
+396
+00:49:25.650 --> 00:49:36.789
+Hamza Farooq: And that's why, you know, when you kick off a project, it looks great, it looks shiny, but then towards the end, you know, as you're building it through, it just… it just fizzles out.
+
+397
+00:49:37.300 --> 00:49:42.569
+Hamza Farooq: Because we are stuck in a forever loop of trying to build things, but as we add features.
+
+398
+00:49:42.680 --> 00:49:44.970
+Hamza Farooq: AI starts to get exhausted.
+
+399
+00:49:45.910 --> 00:50:00.549
+Hamza Farooq: So, Chandrey, to your earlier point, you know, when you started off, like, you know, it's great to build, but I just want to call it out and say that you start with something really good over here. It looks really shiny, but as you will go through, you will get exhausted, and you'll be like, I can't build this, like.
+
+400
+00:50:01.430 --> 00:50:03.059
+Hamza Farooq: How do you build it better?
+
+401
+00:50:03.460 --> 00:50:10.209
+Hamza Farooq: Or how do you think about building it better? You think about having the right spec design, spending time on your specs.
+
+402
+00:50:10.440 --> 00:50:13.790
+Hamza Farooq: The more time you spend on your feature specs.
+
+403
+00:50:14.020 --> 00:50:15.900
+Hamza Farooq: You will get better and better.
+
+404
+00:50:17.390 --> 00:50:18.820
+Hamza Farooq: Right?
+
+405
+00:50:18.930 --> 00:50:28.260
+Hamza Farooq: That's… that's why. Sometimes we have the wrong use cases. Some… almost always, we have no evaluation. Let's say you have your PM2 machine learning, right? You know, these concepts.
+
+406
+00:50:28.580 --> 00:50:34.770
+Hamza Farooq: How do you know that what the display, the text that is being displayed, is it actually a great
+
+407
+00:50:34.930 --> 00:50:36.249
+Hamza Farooq: Great vision for you.
+
+408
+00:50:37.290 --> 00:50:39.629
+Hamza Farooq: Right? It's actually saying the right things.
+
+409
+00:50:39.870 --> 00:50:42.950
+Hamza Farooq: But they are saying in a way that it's going to be useful.
+
+410
+00:50:43.070 --> 00:50:49.889
+Hamza Farooq: So you will have a great sign-up, but it will have a great drop after that, because people will be like, yeah, it's not giving me value.
+
+411
+00:50:51.230 --> 00:50:56.289
+Hamza Farooq: And to what Meredith had said, Meredith to your original point.
+
+412
+00:50:56.450 --> 00:50:58.669
+Hamza Farooq: We need to have an adoption plan.
+
+413
+00:50:59.400 --> 00:51:02.740
+Hamza Farooq: Yeah, you're pushing another AI product down my throat.
+
+414
+00:51:02.880 --> 00:51:07.239
+Hamza Farooq: Is it actually useful for me at the end of the day?
+
+415
+00:51:08.010 --> 00:51:08.810
+Hamza Farooq: So…
+
+416
+00:51:09.490 --> 00:51:19.389
+Hamza Farooq: your AI products or your demos fail, because you start off great, and then your energy fizzles out, and you know, there are too many specs and too many things to build, and it starts to lose its, you know, energy.
+
+417
+00:51:19.980 --> 00:51:26.419
+Hamza Farooq: Second part is that you've identified a wrong use case. Am I overkilling just for the sake of AI?
+
+418
+00:51:26.930 --> 00:51:31.160
+Hamza Farooq: So think about, when you build your next thing, how many people are going to use it?
+
+419
+00:51:31.750 --> 00:51:35.330
+Hamza Farooq: How are we going to use… what is the problem?
+
+420
+00:51:35.500 --> 00:51:37.980
+Hamza Farooq: That you're trying to solve, and what we'll do is…
+
+421
+00:51:38.330 --> 00:51:45.460
+Hamza Farooq: Towards the end of the course, we will basically keep polling amongst each other which is the product that you guys will actually buy.
+
+422
+00:51:46.400 --> 00:51:53.429
+Hamza Farooq: And then we'll put you guys on a podcast with us, and, you know, we'll publish this, because what we want to do is highlight ideas
+
+423
+00:51:54.310 --> 00:51:57.509
+Hamza Farooq: Which are actually… which actually have moat in them.
+
+424
+00:51:58.200 --> 00:52:02.240
+Hamza Farooq: We're not saying how you build it, we're saying just identify business ideas.
+
+425
+00:52:02.520 --> 00:52:06.840
+Hamza Farooq: Where you have thought through, What does a 6-month plan look like?
+
+426
+00:52:07.180 --> 00:52:10.070
+Hamza Farooq: And second is that, what is the correct use case?
+
+427
+00:52:10.520 --> 00:52:12.650
+Hamza Farooq: How are you going to evaluate the success?
+
+428
+00:52:13.520 --> 00:52:15.910
+Hamza Farooq: And what is the adoption plan?
+
+429
+00:52:17.570 --> 00:52:20.819
+Hamza Farooq: Those are the things that makes it better for you.
+
+430
+00:52:21.080 --> 00:52:26.990
+Hamza Farooq: to actually identify great use cases, great products. Otherwise, you're just sitting in
+
+431
+00:52:27.160 --> 00:52:33.839
+Hamza Farooq: you can… like, you know, you don't need to take this class to build 25 different demos on Lovable, because you could do that.
+
+432
+00:52:34.310 --> 00:52:36.200
+Hamza Farooq: To take them to production.
+
+433
+00:52:36.520 --> 00:52:41.620
+Hamza Farooq: Knowing what's… what are the use cases, and how you're… you design them to… to bring them to life.
+
+434
+00:52:42.510 --> 00:52:57.720
+Hamza Farooq: Right? And there are, you know, this is the last slide for me, which is, you know, you need to think about… one more thing is, you know, guardrails. We'll talk about guardrails. We've spoken about memory, a lot, we've spoken about tools, and this is the loop layer.
+
+435
+00:52:57.840 --> 00:53:04.119
+Hamza Farooq: But two aspects which we'll add as we go through the course is guardrails and observability.
+
+436
+00:53:04.850 --> 00:53:09.309
+Hamza Farooq: Those are really, really important when you think about building something really well.
+
+437
+00:53:09.510 --> 00:53:10.469
+Hamza Farooq: Nice for you.
+
+438
+00:53:11.180 --> 00:53:21.949
+Aishwarya Ashok: Yeah, the reason for us to put through what a production agent looks like as from a pictorial perspective is, by now, you understand the whole definition around what
+
+439
+00:53:21.980 --> 00:53:25.700
+Aishwarya Ashok: What could context have, what could tools be, and what could loops be?
+
+440
+00:53:25.700 --> 00:53:48.190
+Aishwarya Ashok: But, just with context, loops, and tools, it's not that your agent is ready. And I know we started this session, Chandrey asked a question around, where would PM's work be more valuable, especially as we start building more AI agents? And when do you know that your agent is actually production ready? So the reason that we put a pictorial representation of a production-ready agent here is.
+
+441
+00:53:48.190 --> 00:53:57.509
+Aishwarya Ashok: What you're building is still very much a piece of what a production layer would look like, which is the whole… the CTL path that we're defining.
+
+442
+00:53:57.510 --> 00:54:03.459
+Aishwarya Ashok: But what happens as soon as you get your first output? And is that output right?
+
+443
+00:54:03.470 --> 00:54:17.099
+Aishwarya Ashok: is it close enough to what an actual write output should be? And is your LLM working for the 10th time better? Is it working for the 100th time better? And is it following some of those policies and some of those,
+
+444
+00:54:17.400 --> 00:54:33.340
+Aishwarya Ashok: steps and instructions that we call as guardrails. Is it following all of that for every single run, so that all of the six months, or all of the one year that you plan to run it, it actually runs? And that is what comes between the prompt that you have to the complete loop.
+
+445
+00:54:33.340 --> 00:54:48.800
+Aishwarya Ashok: finish action that gets done. So everything that you see here is what you'll be learning towards the next part of the course as well, in the upcoming modules. The reason we put it here is because we want to show that the CTL is one part of the build, yes, but how do you measure, how do you know?
+
+446
+00:54:48.800 --> 00:54:53.739
+Aishwarya Ashok: something is production-ready also has a few other states that we would be reaching for.
+
+447
+00:54:54.520 --> 00:54:55.120
+Hamza Farooq: Awesome.
+
+448
+00:54:55.530 --> 00:54:58.909
+Hamza Farooq: Alright, so what we'll do is, we're at the top of the hour.
+
+449
+00:55:01.470 --> 00:55:03.950
+Hamza Farooq: What we'll… we'll put you guys…
+
+450
+00:55:04.650 --> 00:55:09.230
+Hamza Farooq: in breakout room. We want to, sort of, help answer one question.
+
+451
+00:55:10.200 --> 00:55:11.980
+Hamza Farooq: What is one business problem?
+
+452
+00:55:12.220 --> 00:55:13.919
+Hamza Farooq: Problem that you guys are seeing?
+
+453
+00:55:15.070 --> 00:55:20.930
+Hamza Farooq: that you would like to solve. What is one business problem that you would like to solve
+
+454
+00:55:21.030 --> 00:55:25.919
+Hamza Farooq: In… that you're seeing in your day… in your work… in your workday.
+
+455
+00:55:26.100 --> 00:55:40.009
+Hamza Farooq: that you could build… like, we are not asking you how to build it. We're not… we are not in the discussion of how would you build it, but do you think there is a problem that you potentially think AI can solve it? We're not asking how. What we are just suggesting
+
+456
+00:55:40.130 --> 00:55:41.609
+Hamza Farooq: How would you build that?
+
+457
+00:55:42.140 --> 00:55:48.170
+Hamza Farooq: to solve that, with your users, or to solve that. So, we're gonna put you guys in 5 breakout rooms.
+
+458
+00:55:48.940 --> 00:55:53.260
+Hamza Farooq: And, I'll also try to, like, both me and Aishwary will join one of them.
+
+459
+00:55:53.460 --> 00:56:11.590
+Hamza Farooq: All we ask you to do is think about one business problem, and we want to… those of you who have been with us, you know, in our course and things, we would love for you guys to interact with them. One idea, one business problem that you see, any… it could be anything. It could be workplace, it could be anything you want to solve. Chandrey, go ahead.
+
+460
+00:56:14.070 --> 00:56:29.619
+Chandreyee Chowdhury: I actually wanted to propose something, like, not related to the breakout, if I can, may I go ahead. If we can, like, for this cohort, like, the ideas that we have, I know we are submitting as assignments, but if we can possibly create a quick list of the ideas that we have.
+
+461
+00:56:29.620 --> 00:56:38.180
+Chandreyee Chowdhury: And one pitch line. And can we vote, like, internally, like, to validate our concepts, like, amongst our cohort, like, because you're actively thinking about this?
+
+462
+00:56:38.860 --> 00:56:55.860
+Hamza Farooq: Yep, so I actually said that one form is that we'll be polling, so every time you build something, we'll be polling it, and then in the end, whoever gets with the best polls, we'll basically bring you to a podcast interview, and we will publish it as a YouTube video, just so that, you know, we can have that conversation going on.
+
+463
+00:56:56.160 --> 00:57:04.740
+Chandreyee Chowdhury: I was proposing, like, if we can also start in the beginning, because as you know, like, I'm having multiple ideas, like, if I can validate some with the, you know, lesser cohort people.
+
+464
+00:57:05.980 --> 00:57:06.830
+Chandreyee Chowdhury: Thank you.
+
+465
+00:57:08.550 --> 00:57:19.089
+Hamza Farooq: Absolutely. We'll work on it. We'll build a product that can help us, or you help us build it. You help us build, build something simple. All right, putting you all in breakout rooms, starting now.
+
+466
+00:57:19.610 --> 00:57:20.540
+Hamza Farooq: Alright.
+
+467
+00:57:30.060 --> 00:57:31.769
+Hamza Farooq: Everyone should have a room now.
+
+468
+00:57:41.950 --> 00:57:43.200
+Hamza Farooq: Instead.
+
+469
+00:57:44.820 --> 00:57:58.619
+Hamza Farooq: All right, everyone, welcome back. I hope you guys had a good conversation. Just a keynote, just a small note. Every time you find a business problem you want to solve, literally write a couple of lines of that business problem.
+
+470
+00:57:59.030 --> 00:58:03.179
+Hamza Farooq: say plus, like, enter the plus sign, and write YC Company.
+
+471
+00:58:03.530 --> 00:58:06.110
+Hamza Farooq: YC is called Y… is the Y Combinator.
+
+472
+00:58:06.400 --> 00:58:11.209
+Hamza Farooq: There will be a product that someone has built, and you can reverse engineer that yourself.
+
+473
+00:58:12.040 --> 00:58:15.069
+Hamza Farooq: So, all you need to do is just get started with
+
+474
+00:58:15.300 --> 00:58:21.409
+Hamza Farooq: a business problem that you've identified, write it on YC, and then YC will have a company that is built around that.
+
+475
+00:58:23.450 --> 00:58:24.480
+Hamza Farooq: Right? I did not understand.
+
+476
+00:58:24.480 --> 00:58:26.329
+Chandreyee Chowdhury: And this part. Where do I write this?
+
+477
+00:58:26.600 --> 00:58:27.450
+Hamza Farooq: In Google's.
+
+478
+00:58:28.180 --> 00:58:30.330
+Chandreyee Chowdhury: Oh, okay, I see, alright, okay.
+
+479
+00:58:30.330 --> 00:58:32.689
+Hamza Farooq: Yeah, just turn on the AI mode.
+
+480
+00:58:32.690 --> 00:58:33.380
+Aishwarya Ashok: much.
+
+481
+00:58:33.900 --> 00:58:35.749
+Hamza Farooq: Yeah, you just turn on the AI mode.
+
+482
+00:58:36.410 --> 00:58:43.030
+Hamza Farooq: go to Google and say, someone… and most often, like, 99% of the time, you'll find a business problem.
+
+483
+00:58:43.210 --> 00:58:45.460
+Hamza Farooq: that is being solved as a YC company.
+
+484
+00:58:47.360 --> 00:59:07.139
+Hamza Farooq: So, for the remainder of the course, I'll let if Aishwarya run. Aishwarya, I'd love for you to, you know, take them through, I think, the GitHub and stuff, and just the most basic things about how to get started with GitHub, but the second thing is, Katie was asking about, you know, how do we… or about the PRD skills. How do you build a PRD?
+
+485
+00:59:07.690 --> 00:59:11.770
+Hamza Farooq: We could also… we could also show… show that as well.
+
+486
+00:59:12.480 --> 00:59:14.780
+Hamza Farooq: Or we can… we can take it from there.
+
+487
+00:59:16.360 --> 00:59:18.560
+Hamza Farooq: I'll let you take over, Laura.
+
+488
+00:59:19.550 --> 00:59:26.520
+Aishwarya Ashok: Before I get to share my screen, I will just, put in our guitar.
+
+489
+00:59:26.880 --> 00:59:28.269
+Aishwarya Ashok: Link here.
+
+490
+00:59:31.420 --> 00:59:41.990
+Hamza Farooq: And I think Amina also had a video walkthrough on how to get started with Cloud Code. Sorry, with GitHub. Amina, if it's not in Discord, please make sure to add it.
+
+491
+00:59:42.840 --> 00:59:43.430
+Amina Javaid (Co-Facilitator): Yes, sir, bye.
+
+492
+00:59:43.430 --> 00:59:48.189
+Aishwarya Ashok: Shark, sorry, go ahead.
+
+493
+00:59:50.170 --> 00:59:55.559
+Amina Javaid (Co-Facilitator): No, no, I was just telling that I have added those videos, but I will recheck if,
+
+494
+00:59:56.730 --> 01:00:01.789
+Hamza Farooq: I just reshared with the team, because there is a lot of content on the Maven page itself.
+
+495
+01:00:02.050 --> 01:00:20.120
+Hamza Farooq: If you have a question, you're like, how do I get started? Maybe we have already made a video, because we've been running… we run, like, four quotes a year on this course. There is a repeat pattern of the same questions coming up, so take a look at the… at the Maven page itself, and you will find videos and content for you to get started on that.
+
+496
+01:00:23.270 --> 01:00:26.020
+Hamza Farooq: All right, Aishwa, take over.
+
+497
+01:00:26.840 --> 01:00:36.720
+Aishwarya Ashok: Alright, Fox, so I have just put in, the GitHub link in our chat. Just a quick, check with everybody.
+
+498
+01:00:37.020 --> 01:00:48.580
+Aishwarya Ashok: all of you have VS Code and Cloud Code running in your system, or a show of hands of anybody who still has not used, Cloud Code as a part of your
+
+499
+01:00:48.580 --> 01:00:57.799
+Aishwarya Ashok: VSCO system, is there anyone? We would definitely help you out in that case, but I think most of you are set up in that sense with
+
+500
+01:00:58.120 --> 01:01:05.899
+Aishwarya Ashok: The basic setup? Great. Okay. And if you still have questions around how do you download VS Code, how would you,
+
+501
+01:01:06.510 --> 01:01:15.810
+Aishwarya Ashok: how do you get started? We actually have a link that, we share with people with, like, step-by-step, way of showing what to do,
+
+502
+01:01:16.130 --> 01:01:20.699
+Aishwarya Ashok: I'll just put that link as well, so you have that ready.
+
+503
+01:01:24.610 --> 01:01:39.019
+Aishwarya Ashok: Perfect. So, if you have questions about how do I, which plan do I go for Cloud Code if I've not used, how do I download, the right, VS Code extension, how do I get started, how do I log in.
+
+504
+01:01:39.020 --> 01:01:51.559
+Aishwarya Ashok: This link covers every step as to, how would you download it, how would you, install Cloud Code as an extension, and, how would you log into it and get started with your first session.
+
+505
+01:01:51.600 --> 01:02:08.119
+Aishwarya Ashok: And in case you still have, hiccups there, Amina or Hamza, we're happy to help you walk through that. The whole idea of the second half of the session today is to literally get you started into ProdCore, so which means,
+
+506
+01:02:08.270 --> 01:02:18.390
+Aishwarya Ashok: we've given you, like, the GitHub link to start with, which actually has a ton of resources. I will walk you through a couple of them as we discuss
+
+507
+01:02:18.390 --> 01:02:23.890
+Aishwarya Ashok: a few of the Cloud Code parts today, and over the course, you would be looking into the rest of them, but
+
+508
+01:02:23.890 --> 01:02:44.930
+Aishwarya Ashok: Separately, feel free to play around with your cloud agent and with just the link of this PTAB repo that you have. All it takes is simply giving the link of this report to your cloud agent, your cloud chat, wherever using Cloud, and then asking it to walk you through what is available on this GitHub repo that you can actually start with.
+
+509
+01:02:44.930 --> 01:02:59.090
+Aishwarya Ashok: And today, we'll be looking into two key areas of Cloud Core. One is the Cloud.md, and the other one is skills, and we also touched a little bit of what MCPs are. But as we go forward in the next few sessions.
+
+510
+01:02:59.090 --> 01:03:10.179
+Aishwarya Ashok: You can always keep coming back to the repo, and then always use Claude to ask how you can use these different pieces of what we have in the repo. Yes, Hamza?
+
+511
+01:03:10.900 --> 01:03:16.099
+Hamza Farooq: Just to add one small thing, we will be actively building from the next class onwards.
+
+512
+01:03:16.340 --> 01:03:31.289
+Hamza Farooq: every time you come into the class, we expect you to have cloud code running, so today is the first class, we'll give you a trailer, so if you're not set up yet, that's fine. But we will be actively working with that. So, you know, like Lee mentioned on Slido that it will be great to have, like, a working session.
+
+513
+01:03:31.290 --> 01:03:40.400
+Hamza Farooq: We will be doing those sessions as we go through, because we want you to be all hands-on and building it, rather than just watching, but following along with us.
+
+514
+01:03:43.950 --> 01:03:51.099
+Aishwarya Ashok: Awesome, yes. And even as, we're walking through what is plot.nd, what is field.nd today,
+
+515
+01:03:51.130 --> 01:04:11.579
+Aishwarya Ashok: you have the link to the repo. I would also show you how to run what a CloudMD file is and what a scale.md file is inside Cloud Code in your VS Code setup. So, as I'm showing, you can also feel free to open it up if you've already installed, and you can barely check out the steps as I'm showing it on the screen.
+
+516
+01:04:11.580 --> 01:04:23.320
+Aishwarya Ashok: But, if you're new, and if you're still yet to get started, don't worry. You can do it separately out of the session as well. We're happy to, you know, take it one-on-one with you to set things up, and from the next session, you can follow us on on that.
+
+517
+01:04:23.530 --> 01:04:29.020
+Aishwarya Ashok: With that context said, let's look into what
+
+518
+01:04:34.340 --> 01:04:46.399
+Aishwarya Ashok: So, with CloudCon, what we want to be reiterating and, keep mentioning is how, most of us think that it is… it is a chatbot, some of us think it's a tool.
+
+519
+01:04:46.400 --> 01:04:55.000
+Aishwarya Ashok: CloudPloud is something different. It is beyond what we think as, being available as, as,
+
+520
+01:04:55.000 --> 01:05:10.679
+Aishwarya Ashok: a thing of a chatbot for us to chat with, but it is the entire ecosystem. And if you remember from the Module 1, we've been telling how plot code is a hardness, because what we've been discussing through as LLM, plus tools, plus memory, plus context.
+
+521
+01:05:10.680 --> 01:05:29.960
+Aishwarya Ashok: Cloud Code is literally built by the Anthropic team as a harness, as a coding harness, that helps us take any of the idea that we work alongside to the completion of literally building and then shipping it to a fully functional agent. So, the next time that you think of
+
+522
+01:05:29.960 --> 01:05:44.909
+Aishwarya Ashok: Cloud Code, as you get started, is… think of it as a harness that has been customly built by the Anthropic team, and it is possible for us to be building, with Cloud Code, our own harness for any sort of idea that we would want to be.
+
+523
+01:05:45.340 --> 01:05:56.129
+Aishwarya Ashok: But most of you would be using Cloud across different formats. There's Cloud Chat, the good old web format, and then if you remember, Cloud Call came through, and it's been…
+
+524
+01:05:56.130 --> 01:06:12.989
+Aishwarya Ashok: it's, it's so surprisingly been only less than a year, year and a half since Cloud Code has come through, but it's definitely been, out in the move with a lot of people, having built out already. And then between, we also had Cloud Core Work and Claude Design that came up as independent,
+
+525
+01:06:13.190 --> 01:06:21.450
+Aishwarya Ashok: launches from the Anthropo team. So you must have used Claude in either of these formats. There's a reason why we come back to
+
+526
+01:06:21.540 --> 01:06:27.229
+Aishwarya Ashok: Cloud Code, and then, even though you've used Cloud Design and Cloud Web and Cloud Desktop App.
+
+527
+01:06:27.250 --> 01:06:37.630
+Aishwarya Ashok: Clock code, like I said, the hardness is so powerful that it helps you have a complete control over all of those individual parts that we were just talking today.
+
+528
+01:06:37.630 --> 01:06:51.049
+Aishwarya Ashok: when you take something like a Lovable, when you take something like a causa, it is great with helping you come up with a front-end structure. Obviously, you put an idea into Lovable, it always gives a very nicely designed webpage, a very nicely designed
+
+529
+01:06:51.050 --> 01:07:01.729
+Aishwarya Ashok: front-end link to play around with, but when you think of those specs that we were talking about, which is when you think of those edge cases, when you think of how your AI backend has to work.
+
+530
+01:07:01.730 --> 01:07:18.469
+Aishwarya Ashok: when you think of API calls, all of what happens as the plumbing behind scenes for building an agent, Cloud Code is very specifically built for this use case, very specifically built to put all of your heavy-duty work of building an agent into,
+
+531
+01:07:18.760 --> 01:07:26.719
+Aishwarya Ashok: actual, production. So that's one reason why we, we come back to using, or suggesting how Cloud Code is powerful when you
+
+532
+01:07:26.720 --> 01:07:40.069
+Aishwarya Ashok: get started. So if you're new to Cloud Code, like, if you've used Cloud into the web, if you've used Claude Design, but you're new into using Cloud Code in your VS Code system, it's not too heavy, it's not too difficult for you to get started.
+
+533
+01:07:40.070 --> 01:07:49.029
+Aishwarya Ashok: It's very much similar to how you would be using on the web as well, but we want to let you know that it is a separate ecosystem, and that's one of the reasons why we're taking
+
+534
+01:07:49.030 --> 01:07:56.160
+Aishwarya Ashok: time to tell you what are all the possibilities with, using CloudPro into what we want to be building out today.
+
+535
+01:07:57.730 --> 01:07:58.570
+Aishwarya Ashok: So…
+
+536
+01:07:58.670 --> 01:08:15.059
+Aishwarya Ashok: Claude Kurt's ecosystem is so powerful because of a bunch of different things, but they've majorly highlighted these five to be the most, if we had to look into those 5 to 6 things that we need to know about
+
+537
+01:08:15.060 --> 01:08:33.939
+Aishwarya Ashok: Cloud Code, then these would be the couple of things, and each of these would have a role to play as you're building out an agent. And today, we would be looking into the first three of it, which is what a cloud.nd is, what skills are for, and a little bit into what MCP stands for. And in the upcoming,
+
+538
+01:08:34.109 --> 01:08:46.439
+Aishwarya Ashok: classes, we'd be looking into what sub-agents are, what multi-agents would be, how do hooks help you with, you know, different actions as you do LLM calls. But let's focus on the first,
+
+539
+01:08:46.760 --> 01:08:47.860
+Aishwarya Ashok: 3 for today.
+
+540
+01:08:48.670 --> 01:08:58.549
+Aishwarya Ashok: By now, you would be thinking, okay, is it something that we have to start, how do I… how do I basically get started with even those constructs that we're talking about?
+
+541
+01:08:58.600 --> 01:09:16.540
+Aishwarya Ashok: So, Cloud code, as I said, is a harness, which is one of the reasons why a lot of what we spoke in the previous slide is already built into Cloud's ecosystem in such a way that when you want to do a Claude.md file, when you want to create a skill file.
+
+542
+01:09:16.800 --> 01:09:21.319
+Aishwarya Ashok: Claude has a definition for that already. So, when you start
+
+543
+01:09:21.460 --> 01:09:38.600
+Aishwarya Ashok: your project with CloudCloud, everything is present within a .cloud folder. So, for every project that you create, Claude automatically creates a Cloud folder, and what we've been talking in terms of context, in terms of different files, in terms of,
+
+544
+01:09:38.729 --> 01:09:51.200
+Aishwarya Ashok: whatever document we create, all of these would be residing within the .clot folder for you. So it is innately built in such a way that you don't have to tell Claude that, go create a folder for me, but Claude automatically does that.
+
+545
+01:09:51.390 --> 01:10:01.100
+Aishwarya Ashok: And the first ever document that gets created as a part of your cloud folder is your cloud.md file. And of course, you would have other
+
+546
+01:10:01.460 --> 01:10:10.370
+Aishwarya Ashok: sets of items that I've highlighted on the screen. Skills, agents, it is all very neatly present within the cloud folder that each of
+
+547
+01:10:10.370 --> 01:10:27.749
+Aishwarya Ashok: Each of these constructs have their own folders, and as we build out, we'd be looking into how, by the end of building an agent, you would see how your project and your .plot fold folder have literally been augmented with every build that you have, with all of the relevant documents that would come under it.
+
+548
+01:10:28.540 --> 01:10:32.270
+Aishwarya Ashok: The first and foremost of that is Cloud Dominic.
+
+549
+01:10:32.640 --> 01:10:33.560
+Aishwarya Ashok: So…
+
+550
+01:10:33.690 --> 01:10:44.399
+Aishwarya Ashok: When we started the session, we were talking about how creating a spec file is very important, having a PRD is important, having some sort of definition to the idea is important.
+
+551
+01:10:44.730 --> 01:10:52.380
+Aishwarya Ashok: Cloud.md is literally that first file that your Cloud agent understands about your project.
+
+552
+01:10:52.500 --> 01:11:02.550
+Aishwarya Ashok: So, think of cloud.md as your definition file that is basically, instead of giving Claude a bunch of
+
+553
+01:11:02.680 --> 01:11:12.790
+Aishwarya Ashok: lines of prompt every single time to explain what your idea is. You're trying to create one single Markdown formatted file, one single text file.
+
+554
+01:11:13.010 --> 01:11:20.189
+Aishwarya Ashok: The job of the text file is to always hold complete context of the idea that you're working on.
+
+555
+01:11:20.530 --> 01:11:30.349
+Aishwarya Ashok: So, as we saw, Sharpen is an idea. Sharpen is a tool that takes a certain text and then converts that into a certain permissible format.
+
+556
+01:11:30.380 --> 01:11:42.070
+Aishwarya Ashok: So the cloud.md is built in such a way that every time the Cloud agent goes into this project, it understands the complete idea of what that project stands for.
+
+557
+01:11:42.390 --> 01:11:49.079
+Aishwarya Ashok: And most of… most of the people have this question about, hey, is cloud.mg really necessary? Is it not?
+
+558
+01:11:49.120 --> 01:11:56.599
+Aishwarya Ashok: When you're building out something very small, it might look like, I can't skip the cloud.md, perhaps it's not adding much of a usage.
+
+559
+01:11:56.600 --> 01:12:09.539
+Aishwarya Ashok: But as you build out your agent, as you keep, refining it, as you build out different layers, like skills, like agents, sub-agents, your cloud.md becomes the central definition
+
+560
+01:12:09.540 --> 01:12:25.520
+Aishwarya Ashok: folder for your agent, so that even before reading your repository, even before anything else loads, even before your LLM gets loaded, your Cloud.md automatically is loaded for the agent. So the first file that gets loaded for the agent is your cloud.m. So.
+
+561
+01:12:25.720 --> 01:12:37.750
+Aishwarya Ashok: For a bigger project, for as your project keeps growing, your Cloud.md becomes the easiest way for a cloud agent to understand everything about the context of your project.
+
+562
+01:12:38.340 --> 01:13:01.700
+Aishwarya Ashok: So, with Cloud.MD, it gets more easier. So, most of us would have done this, right? Like, always we have these saved prompts, and what we do is every time we come and chat, every time we start a new chat, we have this tendency to go over-explain ourselves. We have this tendency to go explain the idea multiple times, and perhaps in the midway, the idea could expand, the idea could, you know, have a few more features built in.
+
+563
+01:13:01.700 --> 01:13:05.560
+Aishwarya Ashok: But what happens when we just keep it in the chart is that
+
+564
+01:13:05.690 --> 01:13:23.469
+Aishwarya Ashok: we lose the context, and we saw how context can easily get filled in, and then it becomes very difficult for the agent as it drifts away. We spoke about context drifting in our previous class, as when context gets full, it becomes very hard for an agent to understand what's really happening.
+
+565
+01:13:23.470 --> 01:13:26.720
+Aishwarya Ashok: So, claw.md is, like, an answer to that.
+
+566
+01:13:26.870 --> 01:13:30.050
+Aishwarya Ashok: Part, which is, it becomes a part of your context. So.
+
+567
+01:13:30.050 --> 01:13:48.479
+Aishwarya Ashok: if there is any context that you build first with CloudBoard, Cloud.md is your first level of context, because anything that the agent needs to know about Cloud project goes into your Cloud.md. So anytime you chat with your agent, and anytime you make revisions to this idea, you ensure that it's
+
+568
+01:13:48.480 --> 01:13:53.740
+Aishwarya Ashok: become as a part of cloud.m, so that you don't have to repeat yourself the next time. Unlike
+
+569
+01:13:53.740 --> 01:14:09.410
+Aishwarya Ashok: new chats that you open, and you keep coming back to saying the same things over and over, CloudHubMD is literally saving you that time from defining something multiple times, or coming back to add different pieces, and then losing that track because of context issues.
+
+570
+01:14:10.360 --> 01:14:23.540
+Aishwarya Ashok: So, if it's a definition file, what would a claw.md actually have? So, let's in fact look into what a claw.md looks like in real life, and then come back to talk about those different components.
+
+571
+01:14:23.910 --> 01:14:33.909
+Aishwarya Ashok: So, for this GitHub that we just shared with you, every project has a cloud.m. So, as you see, with the current setup that we have.
+
+572
+01:14:34.220 --> 01:14:38.350
+Aishwarya Ashok: there is a clot.md that's present at the root of the folder, so…
+
+573
+01:14:38.630 --> 01:14:46.509
+Aishwarya Ashok: if you're going to be giving this GitHub link to your Cloud Code agent, and then asking it to tell you what exactly is this repo about.
+
+574
+01:14:46.600 --> 01:15:05.810
+Aishwarya Ashok: The first file that your Cloud Code agent would be reading is this cloud.nd, because the clot.nd is giving the definition for what this repo is all about. It's giving you how it's structured, it's literally telling about what to go and find under what type of folders.
+
+575
+01:15:05.830 --> 01:15:23.560
+Aishwarya Ashok: It's giving you how should Claude respond. So, literally, it is a definition to tell the agent how it should be responding once it gets in touch with this file. So, if you notice, it is a Markdown file, it's a completely text file, there's no piece of code that gets involved in it, but
+
+576
+01:15:23.670 --> 01:15:40.910
+Aishwarya Ashok: the way in which it gets activated every time an agent gets in touch with is the important part of Cloud.md. So that's the main reason why your project could be complex, your project could involve 10 agents, but still, the Cloud.md becomes the first layer of
+
+577
+01:15:40.910 --> 01:15:51.269
+Aishwarya Ashok: definition, so every time you augment, every time you build and update your project, your cloud.md also keeps growing with that. Your cloud.md also keeps getting updated.
+
+578
+01:15:52.030 --> 01:15:54.520
+Aishwarya Ashok: An example? Yes, Hamza.
+
+579
+01:15:55.210 --> 01:16:04.289
+Hamza Farooq: I just wanted to, I know that Slido has been getting a few questions about that. If you want to just quickly go through them, just in 2 seconds.
+
+580
+01:16:04.290 --> 01:16:04.910
+Aishwarya Ashok: Yes.
+
+581
+01:16:05.990 --> 01:16:13.000
+Hamza Farooq: So let's go to the recent ones, just recent, and then… Yep.
+
+582
+01:16:15.560 --> 01:16:21.850
+Hamza Farooq: So, Ash is, is ClaudeMD, like, the instruction section on Claude Chat projects?
+
+583
+01:16:22.220 --> 01:16:29.420
+Hamza Farooq: So, claw.md, as Aishwarya said, is the main overview of what you're building.
+
+584
+01:16:30.370 --> 01:16:36.630
+Hamza Farooq: it's not the instruction set. I mean, in a way, it's the instruction set, but it's… it's more along the lines of.
+
+585
+01:16:36.780 --> 01:16:39.500
+Hamza Farooq: Hey, this is an overview of what we're building.
+
+586
+01:16:40.710 --> 01:16:52.969
+Hamza Farooq: So think of Cloud MD like this. Ash addresses to your question. So your question is, I was wondering if empty files are the only way to sharpen the harness still, or are there other ways that have come up recently?
+
+587
+01:16:53.450 --> 01:16:55.779
+Hamza Farooq: Aisha, do you want to mention… do you want to take this?
+
+588
+01:16:55.780 --> 01:16:58.119
+Aishwarya Ashok: Sure. So…
+
+589
+01:16:58.190 --> 01:17:17.349
+Aishwarya Ashok: For the longest time, the MD files were… for a reason, they are very easy for agents, for LLMs to be able to sift through those multiple lines in it, and then… and then go after it to give you an output. But in the recent times, if you've noticed, if you've closely watched Anthropic's releases, HTML has become yet another format of
+
+590
+01:17:17.350 --> 01:17:24.409
+Aishwarya Ashok: context file that's been helping LLMs take charge with respect to both reading through and also giving you output.
+
+591
+01:17:24.410 --> 01:17:30.209
+Aishwarya Ashok: So, in the last, couple of months, or at least almost a year or so, getting
+
+592
+01:17:30.210 --> 01:17:52.889
+Aishwarya Ashok: LLMs to give out a HTML output or give out an HTML formatted response has definitely been very, very helpful with respect to both token consumption and also with respect to more detailed orientation, like, giving you much more better responses in the output. So, apart from Markdown, HTML has definitely been
+
+593
+01:17:52.890 --> 01:18:00.299
+Aishwarya Ashok: One of the other ways to shape the hardness, at the same time also make the LLMs give you a very, you know, sort of consolidated, solid outcome.
+
+594
+01:18:02.990 --> 01:18:22.049
+Aishwarya Ashok: So, I think by, the end of, like, showing you cloud.md and say.md, some of these questions would actually have an answer, or would actually have a much more concrete shape. But, the reason we start with cloud.md is because
+
+595
+01:18:22.360 --> 01:18:37.529
+Aishwarya Ashok: like we were discussing, it gives you a definition of things that you want the project to talk about, and it can also, very surprisingly, have a section that would say what not to do, which is, for every given project.
+
+596
+01:18:37.530 --> 01:18:45.709
+Aishwarya Ashok: it… what can your claw.md actually have? When you think about a definition file, right, when you think about an overview, what would an overview have is…
+
+597
+01:18:45.710 --> 01:18:57.819
+Aishwarya Ashok: basically mentions your tech stack, what we spoke, as Trenton back in, so the language is supported, or, basically what set of steps would the agent need to do when it comes in contact with your project?
+
+598
+01:18:57.820 --> 01:19:10.520
+Aishwarya Ashok: So when it comes to something like Sharpen, it can talk about the front-end stack, the back-end stack, what element has been used in the behind-the-scenes. It can also talk about what steps need to be followed
+
+599
+01:19:10.520 --> 01:19:23.280
+Aishwarya Ashok: to understand shopping. So, what really happens in the front end is when you put a message, the… how the backend works, how, the AI model gets the message and then shows something on the screen.
+
+600
+01:19:23.280 --> 01:19:33.860
+Aishwarya Ashok: that becomes the explanation or the definition for the cloud.nv for a sharpen form. It could also have what not to do, which is, like, an anti-pattern to say.
+
+601
+01:19:33.890 --> 01:19:44.679
+Aishwarya Ashok: hey, agent, if you come in contact with my project, do not change structures of certain files. Do not take certain actions without asking me or without checking with me.
+
+602
+01:19:44.850 --> 01:19:58.739
+Aishwarya Ashok: do only what is allowed for you to do. Those are also a very, very important part of defining, or important part of telling your Cloud.md what to do and how to make an agent understand that.
+
+603
+01:19:58.740 --> 01:20:05.499
+Aishwarya Ashok: A very similar example I could give you, to know how, exactly can,
+
+604
+01:20:05.810 --> 01:20:18.729
+Aishwarya Ashok: the what to do and what not to do can look like, and all of this is present within the Cloud Code starter pack that we just showed you. What I'm doing is showing you different examples of how a cloud.md file can be constructed. So if
+
+605
+01:20:18.730 --> 01:20:27.549
+Aishwarya Ashok: we had to take another idea, such as a competitor research, and if we had to look into what a claw.nv file, a definition file for something, would look like.
+
+606
+01:20:27.550 --> 01:20:37.389
+Aishwarya Ashok: You see, it basically explains the idea, it explains, the tool stack, what happens, what kind of tools are being called, where it is being used.
+
+607
+01:20:37.440 --> 01:20:50.490
+Aishwarya Ashok: But it also has an important section called non-negotiables, which is, what is the agent not supposed to do? What is the agent not supposed to go against, and what it is supposed to do?
+
+608
+01:20:50.570 --> 01:20:55.050
+Aishwarya Ashok: So, as you build your project, think of cloud.md as
+
+609
+01:20:55.080 --> 01:21:03.440
+Aishwarya Ashok: If the agent gets in touch with my project, and if it has to understand any sort of decisions and any sort of rules and responses.
+
+610
+01:21:03.440 --> 01:21:18.409
+Aishwarya Ashok: then those can enter Cloud.envy. So, it can have your architectural recession, it can have your reasoning around why certain files have been formatted in a certain way, why have you created a folder.
+
+611
+01:21:18.410 --> 01:21:32.279
+Aishwarya Ashok: So if, let's say, you have your company data, and you want to put your company data into certain folders, and then tell the agent to not change any part of the data that is put in those folders, then that is also something your cloud.md can have, which is
+
+612
+01:21:32.280 --> 01:21:43.690
+Aishwarya Ashok: hey, agent, do not touch these specific folders, or these folders are very specifically put for context, so treat them as context. So, all of these are…
+
+613
+01:21:44.030 --> 01:21:49.930
+Aishwarya Ashok: things around context. So, we keep talking about the CTL, and we keep saying context, right? So.
+
+614
+01:21:50.220 --> 01:22:08.129
+Aishwarya Ashok: Context can come in terms of the PRDs, can come in terms of the spec that you create, but Cloud.md is actually the first layer of context that your Cloud Code agent gets anytime it gets in touch with the project that you're building. So, always ensure that your Cloud.md is
+
+615
+01:22:08.510 --> 01:22:15.699
+Aishwarya Ashok: it's reflecting what your project is being built, and Cloud.MD is constantly also being updated based on the
+
+616
+01:22:15.700 --> 01:22:38.819
+Aishwarya Ashok: progress that you're making on your project. So anytime you have changes, anytime you have newer things being added, your Cloud.md can always be updated. So every time we make updates to this report, our Cloud.md keeps getting updated with newer demos, with newer file structures, and with newer things to do, things not to do, because we have to keep it updated based on the progress of the project.
+
+617
+01:22:39.530 --> 01:22:43.540
+Aishwarya Ashok: So that is exactly what a Claude.mdes,
+
+618
+01:22:43.980 --> 01:22:53.219
+Aishwarya Ashok: Positioning would be with respect to how it helps your agent understand what to do and what definition it can have for the idea that you're building up.
+
+619
+01:22:53.400 --> 01:22:59.719
+Aishwarya Ashok: So… just as a reflection of what it is, it is the markdown trial, it is…
+
+620
+01:23:00.300 --> 01:23:08.530
+Aishwarya Ashok: It is written in plain text, if you've just noticed. It is literally pieces of text. It's almost like a rulebook or a definition book.
+
+621
+01:23:08.730 --> 01:23:16.349
+Aishwarya Ashok: And it automatically gets invoked for every project, so you do not have to tell a Claude agent to read cloud.md
+
+622
+01:23:16.380 --> 01:23:34.339
+Aishwarya Ashok: Because it automatically reads. The first ever file that your agent gets in touch with, automatically invoked is your clot.md, and that's one reason why it's present in the root folder. So when I showed you how the clot.env is present at the, at the root of the project is because that's the first file that gets read.
+
+623
+01:23:34.420 --> 01:23:49.969
+Aishwarya Ashok: And it can contain any sort of definitions, memory, it can have your architecture notes, it can have full-stack languages that you've used, it can have do's and don'ts, literally anything that you would like to define for the idea that you're building.
+
+624
+01:23:50.520 --> 01:23:59.939
+Aishwarya Ashok: Any questions so far on Clot.md? And in fact, we have a ton of Cloud.md. I showed you two or three, as we were just going through, but if you look at the,
+
+625
+01:24:00.070 --> 01:24:15.860
+Aishwarya Ashok: GitHub repo that we have, we literally have, for every demo that we have built, under a demo folder, we have plot.md for every project. So what you can do is go through all of those projects and look into how plot.md definitions for each of those projects, look
+
+626
+01:24:15.860 --> 01:24:28.330
+Aishwarya Ashok: And, it gives you a good understanding of, for your specific project, what sections you can be including. And you can also ask your cloud agent. You can also tell your Cloud agent to come up with a cloud.md for your project.
+
+627
+01:24:28.740 --> 01:24:44.080
+Aishwarya Ashok: still question your Cloud agent to say what can be included, and how can you make this better? And every time you keep updating and building your agent, you can go back to updating your Cloud.md. So your cloud.md is almost like your living memory.
+
+628
+01:24:44.080 --> 01:24:50.950
+Aishwarya Ashok: Or the brain of the project, because it keeps carrying the context, the first layer, or the first level of context for your project.
+
+629
+01:24:52.120 --> 01:24:58.580
+Aishwarya Ashok: Any questions, feel free to raise your hand, feel free to unmute yourselves and ask any question about
+
+630
+01:24:58.880 --> 01:25:01.050
+Aishwarya Ashok: What else Cloud.md can have?
+
+631
+01:25:02.600 --> 01:25:12.290
+Hamza Farooq: Aishwarya, I'm actually answering questions on Slido as they come. Maybe we can switch to, you know, VS Code and show them how to just sort of just get started.
+
+632
+01:25:13.630 --> 01:25:14.360
+Aishwarya Ashok: Absolutely.
+
+633
+01:25:14.910 --> 01:25:16.320
+Aishwarya Ashok: So,
+
+634
+01:25:16.630 --> 01:25:34.620
+Aishwarya Ashok: This is the VS Code setup, and let's say I have Claude installed as an app already on the VS Code, and you can find that, if you've not done that yet, there is extensions, and within extensions, you can download Cloud Code and log in with the same account that you have.
+
+635
+01:25:34.620 --> 01:25:42.929
+Aishwarya Ashok: And if you're still not set up on that, we've sent you a link that actually has steps to do that. So, what I'm gonna do is, just ask.
+
+636
+01:25:43.240 --> 01:25:44.120
+Aishwarya Ashok: to your…
+
+637
+01:25:47.150 --> 01:25:57.880
+Aishwarya Ashok: So, literally, what I've asked is, what does it know about this repo? So, when it's… when the Cloud Code agent is actually going through, and it says a quick summary from
+
+638
+01:25:58.160 --> 01:26:12.400
+Aishwarya Ashok: the project context, what it's literally doing is going ahead and reading the cloud.m of this report, and then going to come up with, giving me a walkthrough of what can it do, and this… the reason that it was able to come up with
+
+639
+01:26:12.480 --> 01:26:21.320
+Aishwarya Ashok: What's in it is because the first thing that, the first action that the agent does in the background is actually read the cloud running.
+
+640
+01:26:21.490 --> 01:26:23.030
+Aishwarya Ashok: So,
+
+641
+01:26:24.170 --> 01:26:34.809
+Hamza Farooq: So even before this, is… are you guys able to clone this repo? Do you know what… anyone who does not know about cloning, like, how to get started completely from scratch?
+
+642
+01:26:35.610 --> 01:26:42.730
+Andrew Melito: I would say I'm in that boat where I'm not aware of how to get to this point. I have Claude installed on VS Code.
+
+643
+01:26:43.170 --> 01:26:49.839
+Hamza Farooq: Why don't we start with you? Maybe, Aishwarya, if it takes 2 seconds, maybe what we can do… Andrew, do you want to share your screen?
+
+644
+01:26:50.400 --> 01:26:54.190
+Hamza Farooq: And let's… I think it's always fun to have somebody else do it, too.
+
+645
+01:26:54.190 --> 01:26:54.640
+Aishwarya Ashok: Yeah.
+
+646
+01:26:55.340 --> 01:27:01.170
+Hamza Farooq: Right? So, we're gonna allow you… so, Andrew, if you share your screen, yeah, I think you will…
+
+647
+01:27:01.170 --> 01:27:03.620
+Andrew Melito: One second, this might be my first…
+
+648
+01:27:03.800 --> 01:27:04.619
+Hamza Farooq: Yeah, you might have done.
+
+649
+01:27:04.620 --> 01:27:09.890
+Andrew Melito: No ad on this computer might have to just, update a… a setting.
+
+650
+01:27:11.130 --> 01:27:11.820
+Andrew Melito: Just because…
+
+651
+01:27:11.820 --> 01:27:14.110
+Hamza Farooq: I have to, yeah, exit and come back.
+
+652
+01:27:16.930 --> 01:27:21.899
+Andrew Melito: Obviously, someone actually… Shouldn't take more than a second.
+
+653
+01:27:24.820 --> 01:27:28.619
+Andrew Melito: It says I do have to quit and reopen, so I'll be back in one moment.
+
+654
+01:27:28.820 --> 01:27:29.880
+Hamza Farooq: Yep, yep
+
+655
+01:27:29.990 --> 01:27:42.370
+Hamza Farooq: So, I think this is something which also you guys should have, is that… know that you weren't going to share your screen. Lee, you had a question earlier that, you know, it would be great to see from how we get started for, you know, how we build something.
+
+656
+01:27:42.630 --> 01:27:55.440
+Hamza Farooq: So, Lee, to your point, we are going… this is the idea, we're gonna go through… each following class will be a build-up on what we have shown you in the class… in the sessions, and you'll be designing through that.
+
+657
+01:27:58.300 --> 01:28:01.649
+Hamza Farooq: Okay, so… alright, so…
+
+658
+01:28:03.920 --> 01:28:14.260
+Hamza Farooq: you can hit OK. So, let's just say you have, this is something new. So, what you can do is right-click on VS Code and open a new window.
+
+659
+01:28:15.480 --> 01:28:17.180
+Hamza Farooq: At the bottom, there's VS Code.
+
+660
+01:28:18.190 --> 01:28:22.389
+Hamza Farooq: the icon, you can just do right-click on that and say, open new window.
+
+661
+01:28:25.180 --> 01:28:27.860
+Hamza Farooq: So, in the bar, in the docking bar?
+
+662
+01:28:27.860 --> 01:28:28.660
+Aishwarya Ashok: Doc.
+
+663
+01:28:28.810 --> 01:28:30.089
+Hamza Farooq: Yeah, in the dock.
+
+664
+01:28:30.520 --> 01:28:32.670
+Hamza Farooq: Yeah, on VS Code. No, no, VS Code.
+
+665
+01:28:32.670 --> 01:28:33.650
+Aishwarya Ashok: on BScope.
+
+666
+01:28:34.930 --> 01:28:36.949
+Hamza Farooq: So you want to say new window.
+
+667
+01:28:37.870 --> 01:28:44.309
+Hamza Farooq: So this is how you get, like, this is completely new, this is everything new. So, if you open on the left, the plot code.
+
+668
+01:28:45.090 --> 01:28:45.760
+Hamza Farooq: Yep.
+
+669
+01:28:46.150 --> 01:28:48.240
+Hamza Farooq: And literally start a new session.
+
+670
+01:28:49.870 --> 01:28:52.289
+Hamza Farooq: This is… so you click on New Session.
+
+671
+01:28:53.830 --> 01:28:57.550
+Hamza Farooq: There's a new session, button, just over the local…
+
+672
+01:28:59.160 --> 01:29:03.460
+Hamza Farooq: On the left. Yeah, you almost went through that. So, below usage, below weekly.
+
+673
+01:29:04.500 --> 01:29:11.440
+Hamza Farooq: New session, yes, you click on this, and then you can drag the… Perfect. And then you say.
+
+674
+01:29:11.600 --> 01:29:19.030
+Hamza Farooq: Can you please clone… can you please clone this GitHub? So you go to a GitHub, you have access to a GitHub, you have the link to our GitHub.
+
+675
+01:29:27.740 --> 01:29:32.009
+Hamza Farooq: Yep, so you copy the top, you can copy the URL at the top.
+
+676
+01:29:33.400 --> 01:29:34.140
+Hamza Farooq: Yep.
+
+677
+01:29:34.320 --> 01:29:40.940
+Hamza Farooq: And then… and then come back and say, can you please… cloned this. Yep.
+
+678
+01:29:44.060 --> 01:29:46.299
+Hamza Farooq: That's it. And then you hit enter.
+
+679
+01:29:46.620 --> 01:29:50.700
+Hamza Farooq: And what it'll start doing is it'll start to, you know, clone.
+
+680
+01:29:51.700 --> 01:29:54.729
+Hamza Farooq: And then it will save in a folder for you.
+
+681
+01:29:59.630 --> 01:30:06.909
+Aishwarya Ashok: just ran the command at git clone, so most of you who did not want to run that separately, it would automatically run that for you.
+
+682
+01:30:08.820 --> 01:30:13.750
+Hamza Farooq: And all that information is on the GitHub also, how we want to get started and what you want to do.
+
+683
+01:30:14.030 --> 01:30:25.589
+Hamza Farooq: There's a lot of information in that. So, if you go to… on the lev… on the top left, there's, like, a paper sign. Yes, this one right here. You wanna click on that and open folder.
+
+684
+01:30:26.820 --> 01:30:30.859
+Hamza Farooq: And you want to go to that folder, the Cloud Code Starter? No, no, no, go back.
+
+685
+01:30:31.440 --> 01:30:35.699
+Hamza Farooq: You see Cloud Quote Starter at the top? Just click that once and open.
+
+686
+01:30:37.680 --> 01:30:40.020
+Hamza Farooq: There you go. Now you have everything over here.
+
+687
+01:30:42.890 --> 01:30:49.150
+Hamza Farooq: Right? You could open a new chat, and you can open, so you right-click on this, Click preview.
+
+688
+01:30:52.000 --> 01:30:56.620
+Hamza Farooq: Hit right-click on Cloud.md, and if you click review, preview. Open preview.
+
+689
+01:30:57.570 --> 01:31:00.220
+Hamza Farooq: So you can read through what's over here.
+
+690
+01:31:00.560 --> 01:31:05.790
+Hamza Farooq: And then if you open your, if you open your,
+
+691
+01:31:06.170 --> 01:31:10.420
+Hamza Farooq: you know, if you open your chatbot, if you open CloudMD,
+
+692
+01:31:10.600 --> 01:31:17.089
+Hamza Farooq: It will basically start telling… you can ask about it, you know, what's, you know, the cloud code itself.
+
+693
+01:31:20.860 --> 01:31:24.089
+Aishwarya Ashok: On the left, when you have the extension, the Cloud4 extension.
+
+694
+01:31:24.090 --> 01:31:25.939
+Hamza Farooq: You originally had the Cloud Code extension.
+
+695
+01:31:30.350 --> 01:31:32.930
+Sudhamshu Mitra: I think you'll have to add it again, it happened to me.
+
+696
+01:31:33.550 --> 01:31:34.290
+Sudhamshu Mitra: Yep.
+
+697
+01:31:34.660 --> 01:31:39.780
+Hamza Farooq: You can do the manage, I think you do manage over here, and you can allow it to be shown.
+
+698
+01:31:46.660 --> 01:31:47.320
+Hamza Farooq: Oh, interesting.
+
+699
+01:31:47.320 --> 01:31:48.250
+Aishwarya Ashok: the…
+
+700
+01:31:48.950 --> 01:31:49.480
+Hamza Farooq: Yeah.
+
+701
+01:31:51.230 --> 01:31:57.280
+Hamza Farooq: So if you take the mouse to the top, They should manage, yeah.
+
+702
+01:32:00.900 --> 01:32:03.060
+Hamza Farooq: And you can trust, you can do trust.
+
+703
+01:32:06.820 --> 01:32:08.330
+Hamza Farooq: And then you can close this.
+
+704
+01:32:08.740 --> 01:32:13.379
+Hamza Farooq: So on the left, you see that clot sign, you know, the clot star shows up.
+
+705
+01:32:14.960 --> 01:32:19.539
+Hamza Farooq: You click that, and then you say open new session, like, new session.
+
+706
+01:32:20.500 --> 01:32:21.270
+Hamza Farooq: Yep.
+
+707
+01:32:21.490 --> 01:32:23.100
+Hamza Farooq: Perfect. And then…
+
+708
+01:32:23.930 --> 01:32:33.369
+Hamza Farooq: you can drag that to the left, so if you drag that, yep, you could also drag it, that's fine. So now you say, can you tell me the content of this folder?
+
+709
+01:32:40.680 --> 01:32:46.900
+Hamza Farooq: And you want to keep having your… you want to keep showing the signs on the top left, so if you click the paper signs.
+
+710
+01:32:47.110 --> 01:32:52.499
+Hamza Farooq: On the top left, yeah. And then once more, so it will just expand, the whole thing will expand.
+
+711
+01:32:56.310 --> 01:32:58.150
+Hamza Farooq: Right? So you can…
+
+712
+01:32:58.790 --> 01:33:02.689
+Hamza Farooq: You can say, can you tell me about some of the skills that I present?
+
+713
+01:33:05.590 --> 01:33:07.779
+Hamza Farooq: You can just type that question at the bottom.
+
+714
+01:33:18.050 --> 01:33:23.490
+Hamza Farooq: Aishwarya, you want to take it over from, you know, to talk about the skill, particular skill to use? Yeah.
+
+715
+01:33:27.350 --> 01:33:33.060
+Hamza Farooq: And you want to go to click on Sonnet, so click on Sonnet, and you want to switch to Opus, maybe?
+
+716
+01:33:34.090 --> 01:33:36.130
+Hamza Farooq: You wanna click to Opus?
+
+717
+01:33:36.630 --> 01:33:39.009
+Hamza Farooq: And it'll become more, you know, worthy for you.
+
+718
+01:33:39.230 --> 01:33:41.860
+Hamza Farooq: So I'll share it over to you in…
+
+719
+01:33:50.410 --> 01:33:54.690
+Aishwarya Ashok: Awesome. So, everybody's able to estimate.
+
+720
+01:33:57.030 --> 01:33:57.760
+Hamza Farooq: Yep.
+
+721
+01:33:58.440 --> 01:34:11.879
+Aishwarya Ashok: So, when we started with cloud.md, the reason was it is a definition file, and as we just saw, how can we clone, and then that becomes the first file that the agent always reads.
+
+722
+01:34:12.020 --> 01:34:16.840
+Aishwarya Ashok: The next construct is pretty interesting, because fields is where
+
+723
+01:34:17.030 --> 01:34:31.630
+Aishwarya Ashok: most of the tasks that we involve in our idea can actually be turned into a markdown file, once again. But the role here is exactly to the previous question that we had on Slido, which is, is it a set of instructions?
+
+724
+01:34:31.770 --> 01:34:39.410
+Aishwarya Ashok: Skills are more closer to what we can call as instructions, because the role of a skill is to execute a task.
+
+725
+01:34:39.510 --> 01:34:40.340
+Aishwarya Ashok: So…
+
+726
+01:34:40.650 --> 01:34:56.240
+Aishwarya Ashok: think of cloud.md as something that would just tell you the rules, or that would just tell you the definition of what a project is. And skill is basically a file that lets you run A, B, C, and N number of tasks that your project can have.
+
+727
+01:34:56.380 --> 01:34:58.810
+Aishwarya Ashok: So, anytime you want to run a task.
+
+728
+01:34:58.970 --> 01:35:05.320
+Aishwarya Ashok: Skills becomes your easiest way to turn that into a set of instructions to work on.
+
+729
+01:35:05.550 --> 01:35:11.199
+Aishwarya Ashok: So, skill.md is, once again, a markdown file, and what a skill…
+
+730
+01:35:11.410 --> 01:35:30.269
+Aishwarya Ashok: or what makes an entire Markdown file a skill are two main things. One is the name of a skill, and the second one is a description of what it's doing. It's very similar to what task you would want to be doing. So, if we take Sharpen as an example, the task over there is literally
+
+731
+01:35:30.270 --> 01:35:48.710
+Aishwarya Ashok: take a text, sharpen that, and give an output response. So if we had to look into what a skills file would have, it would start with a name and a description, because the way in which an agent can understand the task is only by reading the name and the description. So every time
+
+732
+01:35:48.920 --> 01:36:04.720
+Aishwarya Ashok: you would want to do a certain task that you're doing into a skill. The first and the foremost step is to have a name for the skill by which you can have the agent call the skill, and then you have the description of what that skill is going to perform.
+
+733
+01:36:04.760 --> 01:36:14.519
+Aishwarya Ashok: And the description is basically the task. So, given a task, given the project that you have, and given the task that you want, or the workflow that you would want to do.
+
+734
+01:36:14.590 --> 01:36:20.649
+Aishwarya Ashok: The description becomes what that entire workflow is about, or what action gets performed.
+
+735
+01:36:20.950 --> 01:36:34.980
+Aishwarya Ashok: And every time you want to save a skill into your system, there is a skill name, and then all you can do is have Claude just call out that certain skill by its name, and then it would be able to access that skill.
+
+736
+01:36:35.230 --> 01:36:48.889
+Aishwarya Ashok: So, coming back to how we said you don't want to be reusing your prompts every single time, you know, so given an idea, you don't want to be pasting long, ChatGPD prompts or long cloud prompts into your text box every single time.
+
+737
+01:36:48.890 --> 01:36:56.740
+Aishwarya Ashok: your Skill.md becomes the easiest way to stop repeating yourself to your agent, and then start
+
+738
+01:36:56.740 --> 01:37:00.939
+Aishwarya Ashok: Calling for every action that you would want by just calling out a slash command.
+
+739
+01:37:00.940 --> 01:37:21.130
+Aishwarya Ashok: So, every time you want to write a PRD, you can come up with a skill, and we'll show you what that looks like in a minute, but you can literally ask Claude to use a slash PRD skill. You can literally ask Claude to use a slash stand-up skill every time you want to run your stand-up review. So, for any given task that you have in your idea.
+
+740
+01:37:21.130 --> 01:37:39.740
+Aishwarya Ashok: the easiest way to make Claude run the task and give you an output is to turn that into a markdown file called skill.me. So in most of the assignment questions that you've just taken and you've written through, there is a possibility that there are certain tasks that are repeatable that you don't want to be,
+
+741
+01:37:39.880 --> 01:37:53.450
+Aishwarya Ashok: using a system prompt, so you don't want to be calling the LLM by just giving out a huge prompt every single time. So it gives you a way to go back and think about what of that task can actually be turned into a skill.
+
+742
+01:37:53.450 --> 01:38:00.629
+Aishwarya Ashok: That you can just simply say slash skill name, and then your agent understands that it has to run that particular skill.
+
+743
+01:38:00.720 --> 01:38:05.059
+Aishwarya Ashok: So, we'll look into what that scale looks like, and then come back to,
+
+744
+01:38:05.330 --> 01:38:12.060
+Aishwarya Ashok: Knowing what it was. So, can you show me?
+
+745
+01:38:12.690 --> 01:38:15.160
+Aishwarya Ashok: what I… Oh.
+
+746
+01:38:15.350 --> 01:38:16.410
+Aishwarya Ashok: Springs.
+
+747
+01:38:16.690 --> 01:38:18.770
+Aishwarya Ashok: less than this ripple.
+
+748
+01:38:19.950 --> 01:38:23.440
+Aishwarya Ashok: So we've ensured that this… Sorry, sorry.
+
+749
+01:38:23.470 --> 01:38:33.880
+Hamza Farooq: I just want to make sure that, you know, I saw your point about the folder, is empty. You just have to click that folder, open that folder, and you're able to… you'll be able to run it, the whole thing.
+
+750
+01:38:33.880 --> 01:38:38.460
+Ashutosh Pandit: It's showing up, but I got lost. I'm figuring it out. I'll let you know if I get…
+
+751
+01:38:40.480 --> 01:38:45.770
+Hamza Farooq: And Andrew, I hope you, you know, this is all making, you know, you're able to follow through now with all of this.
+
+752
+01:38:51.250 --> 01:39:02.819
+Aishwarya Ashok: So, getting back to, because we touched upon folder, something that I want to get back to is, if you've cloned our repo, what you would see is cloud.nv is present at the root of the repo, like.
+
+753
+01:39:03.180 --> 01:39:05.559
+Aishwarya Ashok: As one of the files automatically.
+
+754
+01:39:05.800 --> 01:39:12.870
+Aishwarya Ashok: And the skills would be present inside what we saw earlier as, from a pictorial perspective, dotplot folder.
+
+755
+01:39:12.950 --> 01:39:19.110
+Aishwarya Ashok: This is not something you have to tell Claude, because whenever you create a skill, Claude automatically puts
+
+756
+01:39:19.170 --> 01:39:33.409
+Aishwarya Ashok: skills under the .cloud folder. So any skill that you create, Cloud knows to put that as a construct or as a structure into the .cloud folder as a skills folder, and then within the skills folder, you can create
+
+757
+01:39:33.410 --> 01:39:45.220
+Aishwarya Ashok: any number of skills that you would want for any number of tasks that you have in the project that you're creating. So, clot.md is at the root, and anytime you want to find a skill, it's inside .clot folder.
+
+758
+01:39:45.310 --> 01:39:57.929
+Aishwarya Ashok: That is if you want to go navigate it manually, but anytime you want to run something and you don't want to navigate it manually, all you have to do is just tell prod how you would want to be using that. So…
+
+759
+01:39:58.150 --> 01:39:59.220
+Aishwarya Ashok: Peace.
+
+760
+01:39:59.770 --> 01:40:07.209
+Aishwarya Ashok: I want to… Creating a PRD, Thank you.
+
+761
+01:40:07.750 --> 01:40:09.189
+Aishwarya Ashok: Skin for it.
+
+762
+01:40:10.880 --> 01:40:11.980
+Aishwarya Ashok: And then…
+
+763
+01:40:12.230 --> 01:40:21.949
+Aishwarya Ashok: When you explain what you want to be doing as a task, I told you how the name and the description of a skill is very important, and that is because
+
+764
+01:40:22.480 --> 01:40:40.759
+Aishwarya Ashok: The easiest way with which Claude was able to load a PRD generator skill is because what it's literally doing is taking your prompt, reading through that you want to be creating a PRD, and going and doing a pattern match with all the names and the descriptions that it knows of every skill that's present.
+
+765
+01:40:40.980 --> 01:40:54.739
+Aishwarya Ashok: So, the minute you ask for a certain task, and it is able to go match it with a certain skill that's present, then it automatically loads that into the window for you. That is how a skill match happens with your cloud agent.
+
+766
+01:40:54.880 --> 01:41:01.939
+Aishwarya Ashok: And when you have one or two or three skills, it's going to be easier because you're going to be given a very unique name for those skills.
+
+767
+01:41:01.940 --> 01:41:08.600
+Aishwarya Ashok: But what happens is, as you build out your project, it can quickly get cluttered. You could have too many scales that you build through.
+
+768
+01:41:08.600 --> 01:41:23.459
+Aishwarya Ashok: So it's also important that you have unique names and unique descriptions for every task that you're creating a skill for, because what happens is, you can quickly confuse the Cloud agent. Like, when you just have it very open-ended, and you have
+
+769
+01:41:23.460 --> 01:41:32.380
+Aishwarya Ashok: Two or three overlapping skills that share very similar names, or that share very similar description of what the task is.
+
+770
+01:41:32.380 --> 01:41:43.929
+Aishwarya Ashok: then clock struggles to load. It's not… it's not going to be very easy as it just loaded the PRD generator here, because we have only one PRD generator, and it exactly knows what to do, because you've asked it to create a PRD.
+
+771
+01:41:43.930 --> 01:41:45.790
+Aishwarya Ashok: But assuming the fact that
+
+772
+01:41:45.830 --> 01:42:04.000
+Aishwarya Ashok: quickly generate multiple duplicated skills, or you generate skills that are just too close in nature with each other, then what you could run into as a quick enough problem is the skill loading might take a lot of time, or Claude might get back to you saying, hey, I see three skills here, which one would you want to use?
+
+773
+01:42:04.390 --> 01:42:20.630
+Aishwarya Ashok: So that is one of the pitfalls when you go and create multiple skills very quickly. So that is one important caveat, is that you need to understand which task is sort of repeatable, and what is the skill that you want to be creating for that particular task.
+
+774
+01:42:20.920 --> 01:42:21.870
+Aishwarya Ashok: So…
+
+775
+01:42:22.110 --> 01:42:35.930
+Aishwarya Ashok: The reason that it is now giving me an answer like this, which is, give me a feature name, give me a problem, give me your target users, is because we have mentioned in the skill file of the PRD generator as what to ask the user.
+
+776
+01:42:36.010 --> 01:42:49.280
+Aishwarya Ashok: So, in fact, showing you what that skill file looks like, if you go to .cloud, and if you go to go to Skills, we literally have that PRD generator here, and when you open the skill.mb, I'm just gonna…
+
+777
+01:42:49.520 --> 01:42:54.639
+Aishwarya Ashok: Do a little bit of a left switch to show you exactly what that looks like.
+
+778
+01:42:54.940 --> 01:43:02.500
+Aishwarya Ashok: The name says PRD Generator, and the description is so specific to tell when Claude needs to pick up this particular skill.
+
+779
+01:43:03.020 --> 01:43:18.089
+Aishwarya Ashok: And then it gives you the steps to execute that skill. It says, when triggered, ask the user for these four. That's exactly why Claude asked these four inputs from us, is because the skill has been defined in such a way that these inputs have to be taken.
+
+780
+01:43:18.210 --> 01:43:31.459
+Aishwarya Ashok: And after that is a simple, plain English language instruction of what each of these pieces should be, and how exactly the output of your PRD that you're requesting Claude to do, should do. So.
+
+781
+01:43:32.040 --> 01:43:37.400
+Aishwarya Ashok: If you do not have a skill, and if you simply just go to Claude and say, can you come up with a PRD?
+
+782
+01:43:38.080 --> 01:43:41.509
+Aishwarya Ashok: what your cloud agent is doing is taking that burden off
+
+783
+01:43:41.660 --> 01:43:52.469
+Aishwarya Ashok: doing many and multiple LLM thinking calls to give you that output, and it's going to take a long time, it's not going to probably come out in the output format that you want.
+
+784
+01:43:52.510 --> 01:44:04.750
+Aishwarya Ashok: But with a skill, what's really happening is you're literally giving the LLM the job to do, you're literally giving it the task to do, and you're asking it to follow the certain structure that you would want the task to be executed in.
+
+785
+01:44:04.750 --> 01:44:29.050
+Aishwarya Ashok: So that's the advantage of having a skill, is that you do not let the LLM drift away and then make certain, you know, unnecessary turns that you would want it to have. Instead, make it extremely focused on how exactly would you want the task to be completed, and giving it all possible, formats to do that. So, for a PRD, perhaps it did not use any tools here. If you noticed, it's just name and the description.
+
+786
+01:44:29.630 --> 01:44:47.040
+Aishwarya Ashok: But let's say if you wanted it to go search the web and then get competitor information back, or go perform a web search and come back to it, you could also define tools as web search. You could also give it extra capabilities for it to go do that action.
+
+787
+01:44:47.070 --> 01:45:05.130
+Aishwarya Ashok: So, the purpose of having a skill is to ensure that you don't let the LLM drift away for any task that you would want to do, and then have a definition, and always think, so now that we know about a clot.md and skill.md, take a step back. Every time you want to create a skill.md.
+
+788
+01:45:05.130 --> 01:45:20.240
+Aishwarya Ashok: think through how repeatable this process is in your idea, how many times that, you know, it keeps repeating that you don't want to be giving a system prompt, you don't want to be repeating your prompts to your chat window. Instead, anytime…
+
+789
+01:45:22.160 --> 01:45:38.729
+Aishwarya Ashok: an input, it automatically takes the skill, it runs the skill, and then it gives you the output. So that is one way, when you want to create a skill, you take a step back to think through how exactly you want to structure the skill, and when exactly you want Claude to use that skill.
+
+790
+01:45:38.730 --> 01:45:45.620
+Aishwarya Ashok: So, now I just didn't give it any sort of… I just asked it to create a PRD. But what I could also do is do a slash command.
+
+791
+01:45:45.630 --> 01:45:57.230
+Aishwarya Ashok: I could say slash PRD generator, and Claude has such a way that it can load the skills for you. So, I can say Claude slash sharpen, and it can load the skill for me.
+
+792
+01:45:57.230 --> 01:46:15.110
+Aishwarya Ashok: So this is another way in which you can call a skill inside Claude. So one way is to simply tell the task that you want to do, which is, hey, I want you to be doing a certain task, and then Claude does the job of connecting those skills back, and then bringing that to you by loading it for you.
+
+793
+01:46:15.330 --> 01:46:25.950
+Aishwarya Ashok: If you do not want to, you know, say it like that, but instead you want to say specifically by giving a slash command, that's also something you could do by saying sharpen.
+
+794
+01:46:26.450 --> 01:46:27.280
+Aishwarya Ashok: Soon.
+
+795
+01:46:27.380 --> 01:46:28.920
+Aishwarya Ashok: Use the skin.
+
+796
+01:46:29.380 --> 01:46:35.020
+Aishwarya Ashok: And then what Claude would be doing is, because you've given a slash command and literally told what to do.
+
+797
+01:46:35.260 --> 01:46:43.579
+Aishwarya Ashok: it makes that skill immediately ready. It does not go to search and do a pattern match and then bring back an answer. It just automatically, gives you an output.
+
+798
+01:46:44.170 --> 01:47:03.549
+Aishwarya Ashok: So I'm going to pause here, for any questions, there are so far around skills and claw.md. Just to summarize definition, this, is for Claw.md, specific recurring tasks, specific instructional files for skill.md. Yes, yes, Chandrey, go ahead.
+
+799
+01:47:04.180 --> 01:47:12.689
+Chandreyee Chowdhury: Quick question. I can also go and update the PRD, skill, right? PRD generator skill, which is already existing?
+
+800
+01:47:13.360 --> 01:47:32.719
+Aishwarya Ashok: So, when you clone that, yes, absolutely. When you clone the GitHub repo to your folder, what you're having is a local copy of that repo, which means you can not only access what we have pre-built for you, but you can also go ahead and make changes to it. So, I can…
+
+801
+01:47:32.720 --> 01:47:35.540
+Aishwarya Ashok: you know, simply say, hey, I want to make
+
+802
+01:47:35.540 --> 01:47:38.719
+Aishwarya Ashok: some changes to the PRD scale.
+
+803
+01:47:39.080 --> 01:47:41.260
+Aishwarya Ashok: Can you help me with it?
+
+804
+01:47:41.500 --> 01:47:51.439
+Aishwarya Ashok: or if you have very specific suggestions that you want to go make changes because you know it already, you can do that as well. You can tell Claude, I want to edit the PRD skill, so
+
+805
+01:47:51.610 --> 01:48:05.080
+Aishwarya Ashok: go edit the skill and make these suggestive changes, that is also possible. So what you see is a local version of the skill that you have, so what we've built out are templates for you to get started with, and rest is what you go in and update. So.
+
+806
+01:48:05.080 --> 01:48:15.640
+Aishwarya Ashok: Claude would interact with you, like how it's doing here, which is which parts of BID skill you want to change, and I can say one of these, or I can also go and type in my answer, and then keep updating it.
+
+807
+01:48:16.110 --> 01:48:17.189
+Chandreyee Chowdhury: Thank you, yeah.
+
+808
+01:48:18.490 --> 01:48:22.670
+Hamza Farooq: One thing I want you guys to do is, there's a prompt that I've written.
+
+809
+01:48:22.880 --> 01:48:25.279
+Hamza Farooq: Aishwarya, if you want to copy that prompt.
+
+810
+01:48:25.520 --> 01:48:28.199
+Hamza Farooq: There is, on the chat.
+
+811
+01:48:28.510 --> 01:48:41.359
+Hamza Farooq: So, if you guys, copy that prompt, and you can close this one. So, it's basically what we've done is that we've… we have created a small app that you can visualize what your skills will do.
+
+812
+01:48:42.010 --> 01:48:42.810
+Hamza Farooq: So…
+
+813
+01:48:43.040 --> 01:48:52.850
+Hamza Farooq: If you… you all have this available to you, so if you go to your chat and, you know, you copy the last message that I sent on chat, start a local web server.
+
+814
+01:48:53.370 --> 01:48:59.889
+Hamza Farooq: For the PRD Builder and Demos PRD Generator on port 8001 and open it in my browser.
+
+815
+01:49:01.600 --> 01:49:04.170
+Hamza Farooq: So, if you just paste this over there.
+
+816
+01:49:04.570 --> 01:49:07.480
+Hamza Farooq: We have already built that as a demo for you.
+
+817
+01:49:08.460 --> 01:49:15.490
+Hamza Farooq: And you guys can actually see how it comes… how the skill is being used. All it needs is inputs from you.
+
+818
+01:49:16.380 --> 01:49:18.729
+Hamza Farooq: And you can quickly build these.
+
+819
+01:49:18.910 --> 01:49:31.130
+Hamza Farooq: Like, you have a skill, and you want to either invoke that skill into your ecosystem, or you want to invoke that, if you want to invoke that skill in, you know, you want to see how it comes to life, that's the fastest way.
+
+820
+01:49:32.320 --> 01:49:37.939
+Hamza Farooq: So, over here, this is what we have a… this is how you build… you build the skill.
+
+821
+01:49:38.160 --> 01:49:43.790
+Hamza Farooq: with already pre-filled information, so there's a product which we call data, Data Funnels.
+
+822
+01:49:43.800 --> 01:49:56.789
+Hamza Farooq: And that we want, you know, for PMs, we want to be able to analyze SQL tables, who are the target users, what are the key features, when we keep scrolling down, what are the success metrics?
+
+823
+01:49:56.790 --> 01:50:07.100
+Hamza Farooq: So, Katie, if you're still here, this is what I was referring to, you know, how you would build a tool with, you know, with giving your PRD, and then if you hit runs.
+
+824
+01:50:07.110 --> 01:50:11.040
+Hamza Farooq: it will… what it will do is that it will generate your PRD for you right here.
+
+825
+01:50:11.650 --> 01:50:20.710
+Hamza Farooq: Now, if you guys want to use this, there's a URL altogether. All you need to do is put your API key for Anthropic, and it will generate on whatever topic you have.
+
+826
+01:50:22.250 --> 01:50:25.719
+Hamza Farooq: So this becomes a really powerful tool if you just… just…
+
+827
+01:50:25.870 --> 01:50:40.479
+Hamza Farooq: you don't have to enter any prompts, you don't have to deal with Cloud Code anymore, all you're doing is just using Anthropic Key, and it's building an entire process, it's building an entire document for you, which could be a great starting point for you to build a tool.
+
+828
+01:50:44.200 --> 01:50:49.740
+Hamza Farooq: Right? So, I know there's some questions inside also, let's start with them, and then…
+
+829
+01:50:49.850 --> 01:50:54.719
+Hamza Farooq: So the question is, can skills.md be used across projects? Absolutely.
+
+830
+01:50:55.630 --> 01:51:03.380
+Hamza Farooq: And that's the fun part about skills, is you can save skills… the way you save skills in folders, you can use them across.
+
+831
+01:51:04.090 --> 01:51:06.549
+Hamza Farooq: You can use them only for yourself.
+
+832
+01:51:06.700 --> 01:51:16.109
+Hamza Farooq: Or you can keep them for one project, or across all projects of yours, or you can have them shared across your entire ecosystem.
+
+833
+01:51:16.910 --> 01:51:26.730
+Hamza Farooq: So there is many different ways of how you can use it. That's the fun part about using Cloud.md and skill.md files. They can be shared across the board.
+
+834
+01:51:27.450 --> 01:51:28.180
+Aishwarya Ashok: Yo.
+
+835
+01:51:28.180 --> 01:51:51.439
+Aishwarya Ashok: The same thing applies to Claude, as Claude.md as well, in the sense it… you can even prompt Claude, so anytime you come up with a skill, you can even prompt Claude to say, can you make the skill available across my projects? And it does that heavy lifting for you. It saves it as slash command and makes it available across different projects, so within any project, you can just simply use the slash command.
+
+836
+01:51:51.440 --> 01:52:01.040
+Aishwarya Ashok: to call that skill. So you don't necessarily have to have that skill file within that certain project to be able to work on that skill, or to be able to call that skill out.
+
+837
+01:52:01.040 --> 01:52:15.149
+Aishwarya Ashok: Same thing with a clot.md. You can have a clot.md for every project as a definition, but you can also have a clot.md at your user level, where it's a definition file for all your projects. It gives a bird's-eye view of
+
+838
+01:52:15.150 --> 01:52:24.960
+Aishwarya Ashok: everything that is available in your system, or every single project that you've worked on. So, same thing applies to both clot.md and skill.md. You can have it at
+
+839
+01:52:24.960 --> 01:52:30.149
+Aishwarya Ashok: your, individual level, and also at your individual project level.
+
+840
+01:52:31.730 --> 01:52:37.960
+Hamza Farooq: I know we went way over time today. You guys, thank you for sticking with us. The reason is that…
+
+841
+01:52:38.030 --> 01:52:57.359
+Hamza Farooq: We are now going to grow a little deeper from here, but we want to make sure that you're also learning along the way, so come to us with questions. Like, I want to highlight, Ashosh, are you… if you're able to run what we have… what we've done so far in your ecosystem, you're being able to, you know, run a… are you able to run the local mode?
+
+842
+01:52:57.360 --> 01:53:03.069
+Ashutosh Pandit: Yes, I'm your guinea fig. If I can do it, everybody can do it. So, I was able to,
+
+843
+01:53:03.310 --> 01:53:10.990
+Ashutosh Pandit: like, link that folder, and I can see that. So the clone is here, and then I try to copy-paste here.
+
+844
+01:53:11.180 --> 01:53:24.210
+Ashutosh Pandit: thing, and it took a while, it kept asking me, so I have not yet made it automatic, it's manual, so I had to keep saying, yes, yes, yes, yes. It took longer than what you guys were showing, but eventually it did open up that thing in the web browser. So those still I was able to do.
+
+845
+01:53:24.420 --> 01:53:34.629
+Ashutosh Pandit: I created a PRD as well, but I'm trying to figure out if I need to access this… access it later, or where can I see it, so I'm right now chatting with Claude about it.
+
+846
+01:53:34.630 --> 01:53:43.880
+Hamza Farooq: So, it also allows you to save it in a folder, so there's a save folder button also at the end. So you can… if you… once the PRD is generated, you can save it to a folder also.
+
+847
+01:53:44.190 --> 01:53:49.130
+Ashutosh Pandit: Okay. And that folder, it'll organize the folder itself, and I'll… or…
+
+848
+01:53:49.130 --> 01:54:00.299
+Hamza Farooq: Yeah, so it can save… organize the folder, you can save… you can create a new folder, you can save it in the same folder, and then you can point it… and then there's a follow-up command also after that, that says, tell your… tell this to your pod.
+
+849
+01:54:01.620 --> 01:54:04.109
+Hamza Farooq: And that's where we will pick up from the next class.
+
+850
+01:54:04.320 --> 01:54:04.990
+Ashutosh Pandit: Okay.
+
+851
+01:54:05.500 --> 01:54:14.310
+Hamza Farooq: We'll pick up from the next class on your Build Your MD file, let's… or let's start using skills and more things associated with it to build a product.
+
+852
+01:54:14.920 --> 01:54:15.590
+Ashutosh Pandit: Okay.
+
+853
+01:54:15.860 --> 01:54:32.180
+Hamza Farooq: So, we're gonna ask you guys to think about is, how do you start using these tools? So, you know, I spoke to a few of you, Abby, you have an idea, Katie, you have an idea, Ashosh, you have an idea. This is where you start building your PRD.
+
+854
+01:54:32.650 --> 01:54:39.350
+Hamza Farooq: And from the next class, submit, you know, submit your PRDs, or improve PRDs that you guys have.
+
+855
+01:54:39.610 --> 01:54:50.100
+Hamza Farooq: And then let's start… let's build it through the class. Like, we'll try to build… do building sessions more, so that you get comfortable. So lead to your original point, right? How do we get onto building?
+
+856
+01:54:50.220 --> 01:54:52.210
+Hamza Farooq: You get your PRD built.
+
+857
+01:54:52.260 --> 01:55:11.260
+Hamza Farooq: You give it command, this is what I need to build, it will build your PRD spec document, and you take the spec document and you build the first version, then you build the second version, then you start iterating over it. That's how you will grow and build, with the knowledge of system design, on what is your front end, what is your back end, what is your AI backend, what is your databases over there.
+
+858
+01:55:11.750 --> 01:55:18.459
+Hamza Farooq: So I know it seems a lot, but believe us, there is… there is a method to the madness and chaos that we have.
+
+859
+01:55:20.180 --> 01:55:37.960
+Hamza Farooq: Right? And I hope that you're all feeling inspired. I know it's just a Sunday, and you could be doing a million other things, but that's how you sort of… we want you to think. First plan, have a spec document, have a PRD document that is ready for you. Have the skills, you know, start working with skills.
+
+860
+01:55:38.000 --> 01:55:41.889
+Hamza Farooq: So, you start working what we've given you.
+
+861
+01:55:42.260 --> 01:55:46.409
+Hamza Farooq: And then once you're done with what we have given you, you start building your own.
+
+862
+01:55:51.490 --> 01:55:53.489
+Hamza Farooq: Right? Aisharya, any comments for you?
+
+863
+01:55:54.550 --> 01:56:15.420
+Aishwarya Ashok: No, this is pretty much what I wanted to share, which gives us a good chance to go back to some of the ideas that we worked in the assignment one, and think through both from a spec perspective, but also what feels repeatable? What is something that can valuably be a good skill? Can this idea actually have skill? And if
+
+864
+01:56:15.420 --> 01:56:37.670
+Aishwarya Ashok: it can have a skill, what would that task look like? And then do that as an exercise, so it can help you build your very first skill. And if you have questions as you're navigating that, and if you're still debating between, I do not know if this can be turned into a skill, you can definitely chat with Claude, you can definitely come back to us, pull us through, and ask us questions on that as well. But the idea is you start thinking through
+
+865
+01:56:37.960 --> 01:56:38.840
+Aishwarya Ashok: what?
+
+866
+01:56:39.050 --> 01:56:46.789
+Aishwarya Ashok: Task do you want to do, and what parts of that can be a good spec, as well as a good skill that you can build out of that spec?
+
+867
+01:56:49.980 --> 01:57:01.070
+Hamza Farooq: We're gonna stick around for 5 more minutes to answer any questions, but, you know, we know we're almost 20 minutes past time, so feel free to drop off. But if there's any question we can help answer, and what is coming ahead.
+
+868
+01:57:01.380 --> 01:57:09.470
+Hamza Farooq: Basically, we don't know what we don't… we don't know what you're thinking, but what we're trying to do is trying to cast a deeper, wider web.
+
+869
+01:57:09.690 --> 01:57:17.180
+Hamza Farooq: And then go deeper into certain topics so that you guys can build along with us, because some folks are ahead, some folks are behind.
+
+870
+01:57:17.460 --> 01:57:27.240
+Hamza Farooq: We want to make sure everybody is building. We just don't want, hey, I… I'm not going to ask questions because I feel silly, and if I ask questions, it will look dumb. Don't think like that.
+
+871
+01:57:27.790 --> 01:57:31.070
+Hamza Farooq: What is great for us is you've built something.
+
+872
+01:57:32.220 --> 01:57:33.490
+Hamza Farooq: And that's the first part.
+
+873
+01:57:33.720 --> 01:57:48.610
+Hamza Farooq: Second part is, how do you build it better? How do you improve it? But getting started, you know, I'm… I can say there are two people in this call today, Andrew and Ashosh, that I know that have started working on GitHub and have, you know, all these things running at their end.
+
+874
+01:57:48.780 --> 01:57:52.230
+Hamza Farooq: We could start with that. That's where we want to start.
+
+875
+01:57:52.490 --> 01:57:54.439
+Hamza Farooq: And we want you guys to keep building.
+
+876
+01:57:54.550 --> 01:58:00.380
+Hamza Farooq: Because then you will see how it's easy to build, and easy to design these things.
+
+877
+01:58:03.080 --> 01:58:08.850
+Hamza Farooq: Right? So any questions we can help answer? If not, feel free to drop off, and then have a great Sunday.
+
+878
+01:58:08.850 --> 01:58:28.020
+Aishwarya Ashok: Yeah, if you… as you're building out, if you have questions, please do bring it to the office hours next week. If you still have trouble with setting up Claud code, or any questions around how to work with skills, how to work with, your cloud setup, you can definitely bring… we can do a lot more screen shares on, the office hours as well.
+
+879
+01:58:33.740 --> 01:58:38.040
+Hamza Farooq: And if there are no more questions, thank you, everyone. Thank you. Have a great rest of your Sunday.
+
+880
+01:58:38.180 --> 01:58:43.729
+Hamza Farooq: I am… those who have been following… Sorry, Lee, go ahead.
+
+881
+01:58:43.930 --> 01:58:49.409
+Li: Yeah, I just had a quick question. What's a good model to use for, like,
+
+882
+01:58:49.530 --> 01:58:51.440
+Li: Honored for every day.
+
+883
+01:58:51.620 --> 01:58:54.209
+Li: to build a PRD or some…
+
+884
+01:58:54.210 --> 01:59:07.310
+Hamza Farooq: So, see, you almost, almost never need to use Fable. Fable is just extremely expensive, extremely big, and, you know, you want to do your planning mode in Opus, and then build using Opus and Sonnet, between one of them.
+
+885
+01:59:08.610 --> 01:59:11.230
+Hamza Farooq: So, Opus is your builder.
+
+886
+01:59:11.850 --> 01:59:20.189
+Hamza Farooq: The smaller one, the Sonnet, the Sonnet is a smaller one. You're… you don't want to use Haiku at all. Haiku is just garbage.
+
+887
+01:59:20.380 --> 01:59:28.289
+Hamza Farooq: I didn't say that. But, high gauge is bad. So, between Sonnet and Opus is where you're… is where you live.
+
+888
+01:59:30.590 --> 01:59:33.010
+Hamza Farooq: Right? But planning mode, Opus, definitely.
+
+889
+01:59:33.160 --> 01:59:45.190
+Hamza Farooq: Fable is when you want to build a game out. Like, you literally are building a game that requires very high-end architecture design. You don't need, based on what you have right now, Opus is more than enough for you.
+
+890
+01:59:46.280 --> 01:59:56.359
+Aishwarya Ashok: The purpose is also largely declared as the multi-purpose, good, stable running model when compared to the others of Anthropic. So, it can definitely be a good start.
+
+891
+01:59:56.480 --> 02:00:00.189
+Aishwarya Ashok: And token consumption as well is fairly better than your feeble.
+
+892
+02:00:03.250 --> 02:00:16.650
+Chandreyee Chowdhury: If I can go quickly, about the token consumption. Last… last cohort, I was like, I spent $50 to $60 in one day. Something happened. I remember reaching out to Hamza and Aishwarya, you, about that.
+
+893
+02:00:17.010 --> 02:00:26.069
+Chandreyee Chowdhury: which membership should we go for? 20… the $100-ish? The one, that is good enough for building ours, or what do you suggest?
+
+894
+02:00:27.920 --> 02:00:28.300
+Hamza Farooq: -Oh.
+
+895
+02:00:28.300 --> 02:00:30.420
+Aishwarya Ashok: I can probably start and… oh, sorry, go ahead.
+
+896
+02:00:30.720 --> 02:00:31.740
+Hamza Farooq: No, right, Timmy.
+
+897
+02:00:31.740 --> 02:00:50.239
+Aishwarya Ashok: You know, I was gonna say, the $100 is generally what both of us suggest in terms of getting all your rate limits also handled, because what Anthropic gives for $100 is fairly good usage, and also, even when resets happen, it's across a pretty good period that you can build through, and you also get
+
+898
+02:00:50.310 --> 02:01:07.570
+Aishwarya Ashok: equal amount of Fable, and a very, very, you know, bonus percentage of Opus that's available for you to build. $20 is usually a good start, but it tends to sort of run out very quickly, is what I've generally seen. I'll have Hamza do it.
+
+899
+02:01:08.380 --> 02:01:09.830
+Hamza Farooq: I think I couldn't agree more.
+
+900
+02:01:09.980 --> 02:01:13.449
+Hamza Farooq: Just believe you almost never have to use Fable, so…
+
+901
+02:01:14.100 --> 02:01:22.860
+Hamza Farooq: Don't… don't use Fable, it's just gonna burn through your credits like anything. Like, if you're feeling generous, yes, please do. If you're running on a company budget, yes, do.
+
+902
+02:01:23.090 --> 02:01:24.689
+Hamza Farooq: But personal budget, don't.
+
+903
+02:01:25.970 --> 02:01:37.510
+Aishwarya Ashok: by default selected, so ensure that you change the model to Opus, by the way. The sneaky Anthropic people have it automatically set, so when you start a session, just switch your models.
+
+904
+02:01:37.820 --> 02:01:50.060
+Chandreyee Chowdhury: And another thing, like, this is related to our build, right? Like, when we are using the different agents, we should be able to optimize every agent to use a different types of models, depending on the task that it is doing, isn't it?
+
+905
+02:01:50.830 --> 02:01:54.349
+Chandreyee Chowdhury: Yeah, NLMs, the models that you will… we will use.
+
+906
+02:01:57.040 --> 02:01:58.409
+Aishwarya Ashok: Sorry, I didn't catch.
+
+907
+02:01:58.410 --> 02:02:08.950
+Chandreyee Chowdhury: I mean, for example, if I'm doing a document generation versus a research, I should be wearing my models, because assuming that there will be an end user, I want to optimize my cost.
+
+908
+02:02:09.900 --> 02:02:22.420
+Aishwarya Ashok: Absolutely, but I think there's also another nuance to it. I'll probably share my take and have Hamza add to it. So, see, to the same example that you brought through, there's a document generator versus there's a com… like, an extensive research.
+
+909
+02:02:22.420 --> 02:02:46.099
+Aishwarya Ashok: it's not just the model alone that makes it for the cost, it's the number of tool calls, it's the number of, you know, the different context window times that it gets full every time it has to go fetch something. So, all of those also contribute to the token consumption. So it's not just the fact that when you use Fable for a document generation, it uses, like, $10 more than your opus.
+
+910
+02:02:46.100 --> 02:03:05.020
+Aishwarya Ashok: Perhaps it doesn't, because you would actually have very, very less, you know, dollar change when it comes to for the document-generated case. But when it comes to extensive research, when it comes to more tools, when it comes to those resources that it is using, it is those that actually add to the token consumption in most cases. And you'd use
+
+911
+02:03:05.020 --> 02:03:16.849
+Aishwarya Ashok: different models, depending on the complexity of those tasks. That's why you root Haiku for a few, Opus for a few, and, the rest being, like, higher-end models. But, yeah, I can have Hamza add to it.
+
+912
+02:03:17.330 --> 02:03:20.849
+Hamza Farooq: I think, I think I also am very, really, like.
+
+913
+02:03:21.490 --> 02:03:24.769
+Hamza Farooq: Surprised on where your consumption went last time?
+
+914
+02:03:24.880 --> 02:03:30.180
+Hamza Farooq: Maybe… I don't know, like, if you have subscription, you should not be spending anything extra.
+
+915
+02:03:30.330 --> 02:03:41.550
+Chandreyee Chowdhury: No, I think last what we realized is, somehow, at some point, my membership changed from $100 to $220. That's where we ended. So I kind of upgraded my membership.
+
+916
+02:03:41.550 --> 02:03:47.049
+Aishwarya Ashok: Did you use the API by any chance? Like, because suddenly you said there's, like, a spike up of the price.
+
+917
+02:03:47.050 --> 02:04:00.949
+Chandreyee Chowdhury: Yeah, no, I think no, I think no. I was building some usual UI stuff, and it was, like, going, you know, like, $5, $10, I'm just keeping top, you know, the top-ups kept going on. I couldn't figure it out, and I kind of stopped, like, no, I can't do this.
+
+918
+02:04:01.130 --> 02:04:14.080
+Chandreyee Chowdhury: But, yeah, but I think this is… I also shared this, because if anybody's building for the first time, they should be… maybe if your consumption is too high, just stop and check with the group, to figure it out first.
+
+919
+02:04:15.040 --> 02:04:15.720
+Hamza Farooq: Yeah.
+
+920
+02:04:17.320 --> 02:04:26.529
+Hamza Farooq: Absolutely. And I think now they give you a counter also, how much you've used, how much, you know, how much usage you have on the left-hand side. So if you update your VS Code, you'll see that.
+
+921
+02:04:27.490 --> 02:04:36.189
+Aishwarya Ashok: Your usage is shown, and anytime your next reset also comes up, that's very evidently shown as well, so you can use it within your range.
+
+922
+02:04:37.790 --> 02:04:40.449
+Hamza Farooq: I love that your kid is jumping behind me.
+
+923
+02:04:42.210 --> 02:04:45.689
+Chandreyee Chowdhury: She has put up with me for 2 hours, like, that's enough, I guess.
+
+924
+02:04:45.690 --> 02:04:49.849
+Hamza Farooq: Alright, awesome. Folks, thank you so much for today, Ashosh, you have a question?
+
+925
+02:04:49.850 --> 02:04:52.459
+Ashutosh Pandit: Just one broad, generic question. So.
+
+926
+02:04:52.900 --> 02:04:56.320
+Ashutosh Pandit: I think I brought it up to you as well, Aishwary, on the,
+
+927
+02:04:56.390 --> 02:04:58.690
+Ashutosh Pandit: On the, on the, I don't know, walk-ins.
+
+928
+02:04:58.760 --> 02:05:11.850
+Ashutosh Pandit: So I'm going to be, like, today, I figured out how the PRD is going to be generated, and I've installed Cloud Code. So, like, this for every session, I'm guessing we'll walk through, okay, so this is the next step, because right now, I'm getting almost anxiety, because I'm…
+
+929
+02:05:11.890 --> 02:05:24.510
+Ashutosh Pandit: my mind functions, like, I want to make sure at the end I have, like, a product which I can show and do something about, so I have, like, a bunch of questions, but I don't want to ask them right now, because I'm guessing you guys will be covering it over the next few weeks, right? So, as long as I…
+
+930
+02:05:24.640 --> 02:05:38.100
+Ashutosh Pandit: keep following your, sort of, guidance here, every class, build on top of that at the end, because even something as simple as, how do you push this into probably a, I don't know, make it an extension, or put it as Slack, as a Slack app, or a website by itself.
+
+931
+02:05:38.100 --> 02:05:45.730
+Ashutosh Pandit: all of those questions start coming in, but I'm guessing with every week, just following this through, I will be at a place where I may have a product at the end.
+
+932
+02:05:45.730 --> 02:05:48.030
+Ashutosh Pandit: Good or bad is a different question, but something built, right?
+
+933
+02:05:48.030 --> 02:05:54.109
+Hamza Farooq: No, you will have a product, definitely. Like, unless you stop showing up to the class and you decide not to, you know, follow, you will have a product.
+
+934
+02:05:54.240 --> 02:06:01.229
+Hamza Farooq: And that's what we… we make people do. Like, Chandrey is also one example. She's already built 2 products, and she's on a third product.
+
+935
+02:06:01.430 --> 02:06:18.469
+Hamza Farooq: So we will push you all to do that, like, there is no way out, unless you, like, you can turn off your camera and not be a part of the conversation, but if you're doing… if you're a part of the conversation, you will be building, you will be designing, and you will be going from skills to… like, next class, it's all building.
+
+936
+02:06:19.960 --> 02:06:36.999
+Hamza Farooq: Right? And we have given time so that you guys build it correctly. We don't want you to just… just do something, and office hours is where you start to build a little better. You come with your questions. Slido, Slack, there's many places to ask questions. But just keep asking questions.
+
+937
+02:06:37.570 --> 02:06:38.100
+Ashutosh Pandit: Nope.
+
+938
+02:06:38.560 --> 02:06:48.629
+Aishwarya Ashok: Yeah, and bring it to the office hours, and definitely, as you rightly said, you follow through each of these weeks, but after our last session, you also have, like, a couple of days
+
+939
+02:06:48.630 --> 02:07:02.480
+Aishwarya Ashok: To collectively bring all of those learnings, even before you showcase it on our demo day. So there is time for you to be able to build on top of what you've been doing, and also use the time to get back to us if you would still have, like, discussions that you would want to do.
+
+940
+02:07:03.350 --> 02:07:05.340
+Hamza Farooq: Our job is to… is to get
+
+941
+02:07:05.450 --> 02:07:07.710
+Hamza Farooq: You know, you to get things done.
+
+942
+02:07:08.090 --> 02:07:12.109
+Hamza Farooq: Not just a plain, prompted output, but actually
+
+943
+02:07:12.210 --> 02:07:15.000
+Hamza Farooq: Something which has moat, something which has depth.
+
+944
+02:07:15.580 --> 02:07:16.240
+Ashutosh Pandit: Yo.
+
+945
+02:07:16.800 --> 02:07:31.619
+Hamza Farooq: Right? Awesome. Well, folks, we… we… this is the longest we've stayed after class, and I know you all have lives to go to, so we're gonna let you all go. We're gonna call it a day, use office hours, use Slido, use Slack.
+
+946
+02:07:31.720 --> 02:07:41.999
+Hamza Farooq: reach out to us. We are as good as you ask your questions, because we go in a certain direction knowing what you might need, but we don't know what you're thinking unless we know exactly.
+
+947
+02:07:42.360 --> 02:07:43.760
+Hamza Farooq: Unless you tell us.
+
+948
+02:07:44.080 --> 02:07:53.570
+Aishwarya Ashok: So, do our… do… submit your assignments, we go through every single one, and we ensure we answer, so any questions, anything that you have in your building, please, please do send it to us.
+
+949
+02:07:53.840 --> 02:07:58.050
+Hamza Farooq: And it becomes too difficult to do, you can just hire a company to do the job.
+
+950
+02:08:00.110 --> 02:08:09.589
+Hamza Farooq: Right? Most of our customers have come from these courses, because we end up building… we work with 1,300 companies, and we have ended up building a lot of product for other companies on them.
+
+951
+02:08:09.770 --> 02:08:14.700
+Hamza Farooq: Awesome, everyone. Thank you so much. This has been great. Take care.
+
+952
+02:08:14.840 --> 02:08:17.759
+Hamza Farooq: Good night. Take care, and good evening. Bye.
+

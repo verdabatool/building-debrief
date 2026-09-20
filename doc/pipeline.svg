@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8A887E"/>
+    </marker>
+    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#D97757"/>
+    </marker>
+    <marker id="cs" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M10 0 L0 5 L10 10 z" fill="#D97757"/>
+    </marker>
+  </defs>
+  <rect width="900" height="640" fill="#FAF9F5"/>
+
+  <!-- legend -->
+  <rect x="20" y="20" width="18" height="16" rx="4" fill="#FBEFE9" stroke="#E7BCA6"/>
+  <text x="44" y="33" font-size="11" fill="#5A5952">skill, runs in your chat</text>
+  <rect x="196" y="20" width="18" height="16" rx="4" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="220" y="33" font-size="11" fill="#5A5952">sub-agent, own context</text>
+  <rect x="366" y="20" width="18" height="16" rx="4" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="390" y="33" font-size="11" fill="#5A5952">teammate, can message the other</text>
+  <rect x="604" y="20" width="18" height="16" rx="4" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="628" y="33" font-size="11" fill="#5A5952">a file on disk</text>
+
+  <!-- lane 0 : skill -->
+  <rect x="16" y="56" width="868" height="104" rx="14" fill="none" stroke="#E7BCA6" stroke-dasharray="5 5"/>
+  <text x="36" y="82" font-size="13" font-weight="600" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/recap-email 02</text>
+  <text x="182" y="82" font-size="12.5" fill="#A9543A">one skill, in your own chat</text>
+
+  <rect x="36" y="100" width="104" height="44" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="88" y="119" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">module-02</text>
+  <text x="88" y="134" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">.vtt</text>
+
+  <rect x="166" y="98" width="150" height="50" rx="9" fill="#FBEFE9" stroke="#E7BCA6"/>
+  <text x="241" y="119" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">recap-email</text>
+  <text x="241" y="135" font-size="10.5" fill="#A9543A" text-anchor="middle">reads the transcript</text>
+
+  <rect x="344" y="104" width="140" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="414" y="128" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">recap-email.md</text>
+
+  <text x="524" y="118" font-size="11" fill="#7C7A70">The transcript lands in your context.</text>
+  <text x="524" y="136" font-size="11" fill="#7C7A70">Fine once. Not for every document.</text>
+
+  <path d="M140 122 L162 122" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M316 123 L340 123" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+
+  <!-- lane 1 : sub-agents -->
+  <rect x="16" y="176" width="868" height="190" rx="14" fill="none" stroke="#D8D4C8" stroke-dasharray="5 5"/>
+  <text x="36" y="202" font-size="13" font-weight="600" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/debrief 02</text>
+  <text x="150" y="202" font-size="12.5" fill="#7C7A70">two sub-agents read at once, then one render</text>
+
+  <rect x="36" y="246" width="104" height="52" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="88" y="268" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">module-02</text>
+  <text x="88" y="283" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">.vtt</text>
+
+  <rect x="166" y="216" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="241" y="237" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">report-writer</text>
+  <text x="241" y="253" font-size="10.5" fill="#7C7A70" text-anchor="middle">reads the transcript</text>
+
+  <rect x="166" y="290" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="241" y="311" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">faq-writer</text>
+  <text x="241" y="327" font-size="10.5" fill="#7C7A70" text-anchor="middle">reads the transcript</text>
+
+  <rect x="344" y="222" width="140" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="414" y="246" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session-report.md</text>
+
+  <rect x="344" y="296" width="140" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="414" y="320" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">faq.md</text>
+
+  <rect x="504" y="216" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="579" y="237" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">renderer</text>
+  <text x="579" y="253" font-size="10.5" fill="#7C7A70" text-anchor="middle">markdown to html</text>
+
+  <rect x="684" y="222" width="170" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="769" y="246" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session-report.html</text>
+
+  <text x="524" y="306" font-size="11" fill="#7C7A70">Only the report is rendered.</text>
+  <text x="524" y="324" font-size="11" fill="#7C7A70">The FAQ ships as markdown.</text>
+
+  <path d="M140 264 L162 245" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M140 282 L162 313" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M316 241 L340 241" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M316 315 L340 315" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M484 241 L500 241" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M654 241 L680 241" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+
+  <!-- lane 2 : team -->
+  <rect x="16" y="382" width="868" height="196" rx="14" fill="none" stroke="#E7BCA6" stroke-dasharray="5 5"/>
+  <text x="36" y="408" font-size="13" font-weight="600" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/debrief-team 02</text>
+  <text x="190" y="408" font-size="12.5" fill="#A9543A">two teammates agree coverage, then write, then both files render</text>
+
+  <rect x="36" y="454" width="104" height="52" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="88" y="476" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">module-02</text>
+  <text x="88" y="491" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">.vtt</text>
+
+  <rect x="166" y="422" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="241" y="443" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz-writer</text>
+  <text x="241" y="459" font-size="10.5" fill="#7C7A70" text-anchor="middle">picks the questions</text>
+
+  <rect x="166" y="502" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="241" y="523" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcard-writer</text>
+  <text x="241" y="539" font-size="10.5" fill="#7C7A70" text-anchor="middle">picks the terms</text>
+
+  <path d="M241 476 L241 498" stroke="#D97757" stroke-width="1.5" fill="none" marker-end="url(#c)" marker-start="url(#cs)"/>
+
+  <rect x="344" y="428" width="140" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="414" y="452" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz.md</text>
+
+  <rect x="344" y="508" width="140" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="414" y="532" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcards.md</text>
+
+  <rect x="504" y="462" width="150" height="50" rx="9" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="579" y="483" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">renderer</text>
+  <text x="579" y="499" font-size="10.5" fill="#7C7A70" text-anchor="middle">runs twice</text>
+
+  <rect x="684" y="436" width="170" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="769" y="460" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">quiz.html</text>
+
+  <rect x="684" y="500" width="170" height="38" rx="7" fill="#F1EEE4" stroke="#E4E0D4"/>
+  <text x="769" y="524" font-size="11" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">flashcards.html</text>
+
+  <path d="M140 470 L162 447" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M140 490 L162 527" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M316 447 L340 447" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M316 527 L340 527" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M484 447 L492 447 L492 487" stroke="#8A887E" fill="none"/>
+  <path d="M484 527 L492 527 L492 487" stroke="#8A887E" fill="none"/>
+  <path d="M492 487 L500 487" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M654 480 L668 480 L668 455 L680 455" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M654 494 L668 494 L668 519 L680 519" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+
+  <text x="20" y="606" font-size="11" fill="#7C7A70">Three commands, one per mechanism. Same transcript in, eight files out. The only arrow that runs between two</text>
+  <text x="20" y="622" font-size="11" fill="#7C7A70">writers is the clay one in the last lane.</text>
+</svg>

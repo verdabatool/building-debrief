@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8A887E"/>
+    </marker>
+  </defs>
+  <rect width="900" height="440" fill="#FAF9F5"/>
+
+  <text x="20" y="32" font-size="14" font-weight="600" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/debrief 02</text>
+  <text x="140" y="32" font-size="13" fill="#7C7A70">the work happens somewhere your context never goes</text>
+
+  <!-- lane 1 : your chat -->
+  <rect x="16" y="52" width="868" height="112" rx="12" fill="#FBEFE9" stroke="#E7BCA6"/>
+  <text x="36" y="76" font-size="11" fill="#A9543A" font-weight="600">YOUR CHAT</text>
+
+  <rect x="36" y="90" width="150" height="52" rx="9" fill="#FFFFFF" stroke="#D97757" stroke-width="1.5"/>
+  <text x="111" y="112" font-size="12" fill="#141413" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/debrief 02</text>
+  <text x="111" y="128" font-size="10.5" fill="#7C7A70" text-anchor="middle">a skill, the runbook</text>
+
+  <text x="560" y="88" font-size="10.5" fill="#A9543A">YOUR CONTEXT WINDOW</text>
+  <rect x="560" y="98" width="300" height="22" rx="6" fill="#FFFFFF" stroke="#E7BCA6"/>
+  <rect x="561" y="99" width="34" height="20" rx="5" fill="#8FA88B"/>
+  <text x="560" y="138" font-size="11" fill="#7C7A70">only short summaries come back into it</text>
+
+  <!-- lane 2 : sub-agents -->
+  <rect x="16" y="244" width="868" height="152" rx="12" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="36" y="268" font-size="11" fill="#7C7A70" font-weight="600">SUB-AGENTS &#183; one context window each, running at the same time</text>
+
+  <rect x="140" y="280" width="250" height="98" rx="9" fill="#FAF9F5" stroke="#D8D4C8"/>
+  <text x="158" y="302" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">report-writer</text>
+  <rect x="158" y="312" width="214" height="16" rx="4" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <rect x="159" y="313" width="188" height="14" rx="3" fill="#C8785C"/>
+  <text x="158" y="345" font-size="10.5" fill="#7C7A70">its own context, filled by the transcript</text>
+  <text x="158" y="364" font-size="10.5" fill="#7C7A70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">tools: Read, Write</text>
+
+  <rect x="470" y="280" width="250" height="98" rx="9" fill="#FAF9F5" stroke="#D8D4C8"/>
+  <text x="488" y="302" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">faq-writer</text>
+  <rect x="488" y="312" width="214" height="16" rx="4" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <rect x="489" y="313" width="188" height="14" rx="3" fill="#C8785C"/>
+  <text x="488" y="345" font-size="10.5" fill="#7C7A70">its own context, filled by the transcript</text>
+  <text x="488" y="364" font-size="10.5" fill="#7C7A70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">tools: Read, Write</text>
+
+  <!-- launch -->
+  <path d="M90 142 L90 200 L230 200 L230 276" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <path d="M90 142 L90 200 L560 200 L560 276" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <text x="104" y="194" font-size="10.5" fill="#7C7A70">launches both at once</text>
+
+  <!-- return -->
+  <path d="M320 276 L320 226 L690 226" stroke="#8A887E" fill="none"/>
+  <path d="M650 276 L650 226" stroke="#8A887E" fill="none"/>
+  <path d="M690 226 L690 126" stroke="#8A887E" fill="none" marker-end="url(#g)"/>
+  <text x="336" y="220" font-size="10.5" fill="#7C7A70">each returns a summary, not its transcript</text>
+
+  <text x="20" y="424" font-size="11" fill="#7C7A70">They never message each other, and here that is correct. Each one covers everything in its own document,</text>
+  <text x="20" y="436" font-size="11" fill="#7C7A70">so neither makes a choice that affects the other.</text>
+</svg>

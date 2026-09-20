@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="sg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8A887E"/>
+    </marker>
+  </defs>
+  <rect width="900" height="380" fill="#FAF9F5"/>
+
+  <text x="20" y="34" font-size="14" font-weight="600" fill="#141413">A skill is a file of instructions you can edit</text>
+  <text x="20" y="54" font-size="12.5" fill="#7C7A70">It runs in your own chat. Nothing is isolated, nothing runs in parallel.</text>
+
+  <rect x="20" y="76" width="236" height="150" rx="11" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="38" y="100" font-size="11.5" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">SKILL.md</text>
+  <line x1="38" y1="110" x2="238" y2="110" stroke="#EFECE3"/>
+  <text x="38" y="130" font-size="11" fill="#7C7A70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name:</text>
+  <text x="38" y="148" font-size="11" fill="#7C7A70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">description:</text>
+  <text x="38" y="166" font-size="11" fill="#7C7A70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">argument-hint:</text>
+  <line x1="38" y1="180" x2="238" y2="180" stroke="#EFECE3"/>
+  <text x="38" y="200" font-size="11.5" fill="#141413">the template</text>
+  <text x="38" y="216" font-size="11.5" fill="#141413">the rules</text>
+
+  <path d="M262 150 L328 150" stroke="#8A887E" fill="none" marker-end="url(#sg)"/>
+  <text x="295" y="141" font-size="11" fill="#7C7A70" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/name NN</text>
+
+  <rect x="336" y="76" width="236" height="150" rx="11" fill="#FBEFE9" stroke="#E7BCA6"/>
+  <text x="454" y="104" font-size="11.5" fill="#A9543A" text-anchor="middle">RUNS IN YOUR CHAT</text>
+  <rect x="354" y="120" width="200" height="22" rx="5" fill="#F1EEE4" stroke="#D8D4C8"/>
+  <rect x="355" y="121" width="160" height="20" rx="4" fill="#C8785C"/>
+  <text x="454" y="160" font-size="11.5" fill="#5A5952" text-anchor="middle">Your context fills with whatever</text>
+  <text x="454" y="176" font-size="11.5" fill="#5A5952" text-anchor="middle">the skill has to read.</text>
+  <text x="454" y="204" font-size="11.5" fill="#5A5952" text-anchor="middle">Fine once. Not five times.</text>
+
+  <path d="M578 150 L644 150" stroke="#8A887E" fill="none" marker-end="url(#sg)"/>
+
+  <rect x="652" y="76" width="228" height="150" rx="11" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="766" y="104" font-size="11.5" fill="#7C7A70" text-anchor="middle">OUTPUT</text>
+  <text x="766" y="134" font-size="12.5" fill="#141413" text-anchor="middle">The same shape</text>
+  <text x="766" y="152" font-size="12.5" fill="#141413" text-anchor="middle">every single time</text>
+  <text x="766" y="186" font-size="11.5" fill="#A9543A" text-anchor="middle">Edit the file and every</text>
+  <text x="766" y="202" font-size="11.5" fill="#A9543A" text-anchor="middle">future run changes.</text>
+
+  <text x="20" y="272" font-size="12.5" font-weight="600" fill="#141413">Two kinds of skill in this repo</text>
+
+  <rect x="20" y="286" width="424" height="76" rx="11" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="38" y="310" font-size="11.5" fill="#7C7A70">FORMAT SKILLS &#183; what good output looks like</text>
+  <text x="38" y="334" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">recap-email</text>
+  <text x="140" y="334" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">beautiful-html</text>
+  <text x="38" y="352" font-size="11" fill="#7C7A70">Reusable knowledge. One of these came from another repo.</text>
+
+  <rect x="456" y="286" width="424" height="76" rx="11" fill="#FFFFFF" stroke="#D8D4C8"/>
+  <text x="474" y="310" font-size="11.5" fill="#7C7A70">BUTTON SKILLS &#183; a runbook that presses the others</text>
+  <text x="474" y="334" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">debrief</text>
+  <text x="560" y="334" font-size="12" fill="#141413" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">debrief-team</text>
+  <text x="474" y="352" font-size="11" fill="#7C7A70">They write nothing themselves. They launch agents in order.</text>
+</svg>
