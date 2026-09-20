@@ -6,6 +6,8 @@ Every week a course facilitator finishes a live class and has to ship the same f
 
 Debrief turns that transcript into those five documents, plus HTML renders of three of them.
 
+**Want to build it yourself?** [Building Debrief](https://building-debrief.vercel.app/) walks through it step by step, from an empty folder to the finished project, one mechanism per lesson.
+
 ## The four ideas
 
 | Idea | The problem it solves | Where it is used here |
