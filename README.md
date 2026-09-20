@@ -15,6 +15,42 @@ Debrief turns that transcript into those five documents, plus HTML renders of th
 | **Agent team** | One agent's choice constrains another's, and neither can know it in advance | Quiz and flashcards |
 | **Memory and a vault** | Every run starts from zero, and nothing accumulates | Per-agent notes, and `vault/` |
 
+## Repo structure
+
+```
+CLAUDE.md                          read first: layout, house rules, your course
+transcript/module-N.vtt            input, one Zoom transcript per session
+outputs/module-NN/                 generated: five .md deliverables, three .html renders
+
+.claude/
+  settings.json                    turns agent teams on
+  skills/
+    recap-email/SKILL.md           a format: the weekly email
+    beautiful-html/
+      SKILL.md                     a format: markdown into a styled page
+      cartesian.html               the page template it fills
+    debrief/SKILL.md               a runbook: report, FAQ, render
+    debrief-team/SKILL.md          a runbook: quiz and flashcards, negotiated
+    vault/                         the vault plugin, optional and removable
+      .claude-plugin/plugin.json   the manifest that makes it a plugin
+      README.md                    what it is, and how to switch it off
+      agents/wiki-keeper.md        the only agent allowed to write the vault
+      skills/wiki-update/SKILL.md  becomes /vault:wiki-update
+  agents/
+    report-writer.md               opus   · memory · Read, Write
+    faq-writer.md                  opus   · memory · Read, Write
+    quiz-writer.md                 opus   · memory · Read, Write
+    flashcard-writer.md            sonnet · memory · Read, Write
+    renderer.md                    sonnet ·        · Read, Write + beautiful-html
+  agent-memory/                    written by the agents themselves, not committed
+
+vault/                             what the course knows, across every module
+  README.md                        the conventions and merge rules
+doc/README.md                      the long guide, with diagrams
+```
+
+`NN` is the module number, accepted with or without the leading zero. Add a session by dropping `module-N.vtt` into `transcript/`. Eight files land in `outputs/module-02/`, and that folder is regenerated on every run and is not committed.
+
 ## How each one is used here
 
 ### Skills
@@ -43,12 +79,41 @@ Four agents carry `memory: project` and keep a notebook under `.claude/agent-mem
 
 The `vault` plugin is the other half. `/vault:wiki-update NN` hands the finished module to `wiki-keeper`, the only agent allowed to write in `vault/`, which keeps one page per idea and adds a line each time a later module returns to it. Nothing in the pipeline depends on it: disable the plugin and the first three commands behave exactly as before.
 
-## Demo path
+## How to run each one
 
-1. **Skill.** Run `/recap-email 02`. The email comes out in the right format because the format lives in a file. *Then look at your context meter: the transcript is now in your chat, and four more reads will not fit.*
-2. **Sub-agents.** Run `/debrief 02`. Two agents read the transcript at once, each in its own window, and your chat stays clean. *With the recap from step 1 you now have three of the five documents, and the two missing are the two that cannot be written independently.*
-3. **Team.** Run `/debrief-team 02`. Watch the two post their lists, find the gap, and trade slots. *Then check the result: every term the quiz tests has a card behind it.*
-4. **Memory and the vault.** Run `/vault:wiki-update 02`, then open `.claude/agent-memory/` and `vault/`. *The payoff is on the second module, when a concept page gains a line instead of a duplicate appearing.*
+Run them in this order. Each one leans on what the last produced.
+
+### Skills
+
+```
+/recap-email 02
+```
+
+Writes `outputs/module-02/recap-email.md`, under 350 words, in the template's exact shape. Then look at your context meter: the whole transcript is now sitting in your chat, because a skill runs where you are. That is fine once, and it is the reason for the next command.
+
+### Sub-agents
+
+```
+/debrief 02
+```
+
+Starts `report-writer` and `faq-writer` in the same turn, so both read the transcript at once in separate windows, then starts `renderer` on the finished report. Writes `session-report.md`, `faq.md` and `session-report.html`. Watch what comes back into your chat: a list of topic titles and a count of deferred questions, not the transcript.
+
+### Agent teams
+
+```
+/debrief-team 02
+```
+
+Needs `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`, which `.claude/settings.json` sets, and it is read when the session starts, so restart Claude Code after adding it. Run it after `/debrief`, because both writers read the session report. They post their lists, trade slots, then write in turn and the lead checks both files. Writes `quiz.md`, `flashcards.md` and the two renders.
+
+### Memory and the vault
+
+```
+/vault:wiki-update 02
+```
+
+Optional, and run last, so the concept pages can record which quiz question and which flashcard use each term. Hands the module to `wiki-keeper`, which writes one page per idea into `vault/`. Memory needs no command at all: the four agents carrying `memory: project` have been filling `.claude/agent-memory/` since your first run. The payoff for both arrives on the second module, when a concept page gains a line rather than a duplicate appearing.
 
 ## Reuse it for your own course
 
